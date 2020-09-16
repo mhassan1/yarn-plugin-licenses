@@ -1,0 +1,9 @@
+{
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "devDependencies": {
+    "is-promise": "^4.0.0"
+  }
+}
