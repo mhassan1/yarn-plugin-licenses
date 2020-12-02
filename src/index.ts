@@ -105,47 +105,47 @@ const getTree = async (project: Project, json: boolean, recursive: boolean) => {
 
     if (!rootChildren[license]) {
       rootChildren[license] = {
-        value: [license, formatUtils.Type.NO_HINT],
+        value: formatUtils.tuple(formatUtils.Type.NO_HINT, license),
         children: {},
       };
     }
 
+    const nodeValue = formatUtils.tuple(formatUtils.Type.DEPENDENT, {
+      // @ts-ignore
+      locator,
+      // @ts-ignore
+      descriptor,
+    });
     const node: treeUtils.TreeNode = {
-      value: [
-        {
-          descriptor,
-          locator,
-        },
-        formatUtils.Type.DEPENDENT,
-      ],
+      value: nodeValue,
       children: {
         ...(url
           ? {
               url: {
-                value: [
-                  stringifyKeyValue("URL", url, json),
+                value: formatUtils.tuple(
                   formatUtils.Type.NO_HINT,
-                ],
+                  stringifyKeyValue("URL", url, json)
+                ),
               },
             }
           : {}),
         ...(vendorName
           ? {
               vendorName: {
-                value: [
-                  stringifyKeyValue("VendorName", vendorName, json),
+                value: formatUtils.tuple(
                   formatUtils.Type.NO_HINT,
-                ],
+                  stringifyKeyValue("VendorName", vendorName, json)
+                ),
               },
             }
           : {}),
         ...(vendorUrl
           ? {
               vendorUrl: {
-                value: [
-                  stringifyKeyValue("VendorUrl", vendorUrl, json),
+                value: formatUtils.tuple(
                   formatUtils.Type.NO_HINT,
-                ],
+                  stringifyKeyValue("VendorUrl", vendorUrl, json)
+                ),
               },
             }
           : {}),
