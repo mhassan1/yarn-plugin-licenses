@@ -14,6 +14,16 @@ yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-licens
 yarn licenses list --help
 ```
 
+## Testing
+
+`yarn test`
+
+NOTE: Integration tests require `yarn build` first.
+
+## Publishing
+
+`npm version <version>`
+
 ## License
 
 MIT
