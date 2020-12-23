@@ -3,6 +3,7 @@
 ## [0.2.0] - 2020-12-30
 [0.2.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.1.0...v0.2.0
 
+- Bump dev dependencies
 - Migrate from tslint to eslint
 
 ## [0.1.0] - 2020-12-08
