@@ -28,6 +28,22 @@ type YarnStateEntry = {
   aliases?: string[]
 }
 
+export const getLicense = (project: Project, pkg: Package) => {
+  makeYarnState(project);
+
+  const locator = structUtils.convertPackageToLocator(pkg);
+  const entry = yarnState[structUtils.stringifyLocator(locator)];
+  if (!entry) return null;
+
+  const location = entry.locations[0];
+  const portablePath = location
+      ? ppath.join(location, "LICENSE" as any)
+      : "LICENSE" as any;
+  const nativePath = npath.fromPortablePath(portablePath);
+  const license = readFileSync(nativePath).toString();
+  return license;
+};
+
 let yarnState: YarnState
 let yarnStateAliases: YarnState
 
