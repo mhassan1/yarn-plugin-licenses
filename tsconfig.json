@@ -2,6 +2,7 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "module": "commonjs",
+    "strict": true,
     "target": "es2018",
     "lib": [
       "es2019"

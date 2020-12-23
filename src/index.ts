@@ -11,12 +11,14 @@ import {
   formatUtils,
 } from "@yarnpkg/core";
 import { Command, Usage } from "clipanion";
-import { resolveLinker } from "./linkers";
+import { ManifestWithLicenseInfo, resolveLinker } from "./linkers";
 
 class LicensesListCommand extends Command<CommandContext> {
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   @Command.Boolean(`-R,--recursive`)
   recursive: boolean = false;
 
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   @Command.Boolean(`--json`)
   json: boolean = false;
 
@@ -37,7 +39,7 @@ class LicensesListCommand extends Command<CommandContext> {
   });
 
   @Command.Path(`licenses`, `list`)
-  async execute() {
+  async execute(): Promise<void> {
     const configuration = await Configuration.find(
       this.context.cwd,
       this.context.plugins
@@ -70,6 +72,14 @@ const plugin: Plugin = {
 
 export default plugin;
 
+/**
+ * Get the license tree for a project
+ *
+ * @param {Project} project - Yarn project
+ * @param {boolean} json - Whether to output as JSON
+ * @param {boolean} recursive - Whether to compute licenses recursively
+ * @returns {treeUtils.TreeNode} Root tree node
+ */
 const getTree = async (project: Project, json: boolean, recursive: boolean) => {
   const rootChildren: treeUtils.TreeMap = {};
   const root: treeUtils.TreeNode = { children: rootChildren };
@@ -93,11 +103,13 @@ const getTree = async (project: Project, json: boolean, recursive: boolean) => {
 
   for (const descriptor of sortedDescriptors.values()) {
     const identHash = project.storedResolutions.get(descriptor.descriptorHash);
+    if (!identHash) continue
     const pkg = project.storedPackages.get(identHash);
+    if (!pkg) continue
     const locator = structUtils.convertPackageToLocator(pkg);
 
     const packageManifest = linker.getPackageManifest(project, pkg);
-    if (!packageManifest) continue;
+    if (packageManifest === null) continue;
 
     const { license, url, vendorName, vendorUrl } = getLicenseInfoFromManifest(
       packageManifest
@@ -106,14 +118,14 @@ const getTree = async (project: Project, json: boolean, recursive: boolean) => {
     if (!rootChildren[license]) {
       rootChildren[license] = {
         value: formatUtils.tuple(formatUtils.Type.NO_HINT, license),
-        children: {},
-      };
+        children: {} as treeUtils.TreeMap,
+      } as treeUtils.TreeNode;
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     const nodeValue = formatUtils.tuple(formatUtils.Type.DEPENDENT, {
-      // @ts-ignore
       locator,
-      // @ts-ignore
       descriptor,
     });
     const node: treeUtils.TreeNode = {
@@ -153,13 +165,20 @@ const getTree = async (project: Project, json: boolean, recursive: boolean) => {
     };
 
     const key = structUtils.stringifyLocator(locator);
-    rootChildren[license].children[key] = node;
+    const licenseChildren = rootChildren[license].children as treeUtils.TreeMap
+    licenseChildren[key] = node;
   }
 
   return root;
 };
 
-const getLicenseInfoFromManifest = (manifest) => {
+/**
+ * Get license information from a manifest
+ *
+ * @param {ManifestWithLicenseInfo} manifest - Manifest with license information
+ * @returns {LicenseInfo} License information
+ */
+const getLicenseInfoFromManifest = (manifest: ManifestWithLicenseInfo): LicenseInfo => {
   const { license, repository, homepage, author } = manifest;
 
   return {
@@ -169,6 +188,13 @@ const getLicenseInfoFromManifest = (manifest) => {
     vendorName: author?.name,
     vendorUrl: homepage || author?.url,
   };
+};
+
+type LicenseInfo = {
+  license: string;
+  url?: string;
+  vendorName?: string;
+  vendorUrl?: string;
 };
 
 const stringifyKeyValue = (key: string, value: string, json: boolean) => {
