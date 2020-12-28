@@ -22,9 +22,10 @@ export const getPackageManifest = (
   if (!entry) return null;
 
   const location = entry.locations[0];
-  const portablePath = location
+  const relativePath = location
     ? ppath.join(location, Filename.manifest)
     : Filename.manifest;
+  const portablePath = ppath.join(project.cwd, relativePath);
   const nativePath = npath.fromPortablePath(portablePath);
   const packageJson = readFileSync(nativePath).toString();
 

@@ -1,3 +1,6 @@
+/* istanbul ignore file */
+// this file is covered by CLI tests
+
 import { getPnpPath } from "@yarnpkg/plugin-pnp";
 import { Package, Project, structUtils } from "@yarnpkg/core";
 import {

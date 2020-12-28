@@ -2,6 +2,7 @@ import { Project, Package, Manifest } from "@yarnpkg/core";
 import * as pnp from "./pnp";
 import * as nodeModules from "./node-modules";
 
+/* istanbul ignore next */
 /**
  * Resolve linker from `nodeLinker` configuration
  *
@@ -20,7 +21,10 @@ export const resolveLinker = (nodeLinker: string): Linker => {
 };
 
 type Linker = {
-  getPackageManifest: (project: Project, pkg: Package) => ManifestWithLicenseInfo | null;
+  getPackageManifest: (
+    project: Project,
+    pkg: Package
+  ) => ManifestWithLicenseInfo | null;
 };
 
 export type ManifestWithLicenseInfo = Manifest & {
