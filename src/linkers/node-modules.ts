@@ -1,7 +1,6 @@
 import { Project, Package, structUtils } from "@yarnpkg/core";
 import { parseSyml } from "@yarnpkg/parsers";
-import { readFileSync } from "fs";
-import { npath, ppath, PortablePath, Filename } from "@yarnpkg/fslib";
+import { xfs, ppath, PortablePath, Filename } from "@yarnpkg/fslib";
 import { ManifestWithLicenseInfo } from ".";
 
 /**
@@ -9,13 +8,13 @@ import { ManifestWithLicenseInfo } from ".";
  *
  * @param {Project} project - Yarn project
  * @param {Package} pkg - Yarn package
- * @returns {ManifestWithLicenseInfo | null} Package manifest
+ * @returns {Promise<ManifestWithLicenseInfo | null>} Package manifest
  */
-export const getPackageManifest = (
+export const getPackageManifest = async (
   project: Project,
   pkg: Package
-): ManifestWithLicenseInfo | null => {
-  makeYarnState(project);
+): Promise<ManifestWithLicenseInfo | null> => {
+  await makeYarnState(project);
 
   const locator = structUtils.convertPackageToLocator(pkg);
   const entry = yarnState[structUtils.stringifyLocator(locator)];
@@ -26,8 +25,7 @@ export const getPackageManifest = (
     ? ppath.join(location, Filename.manifest)
     : Filename.manifest;
   const portablePath = ppath.join(project.cwd, relativePath);
-  const nativePath = npath.fromPortablePath(portablePath);
-  const packageJson = readFileSync(nativePath).toString();
+  const packageJson = await xfs.readFilePromise(portablePath, "utf8");
 
   return JSON.parse(packageJson);
 };
@@ -39,16 +37,15 @@ let yarnState: any;
  * Cache Yarn state from `yarn-state.yml`, if it has not already been cached
  *
  * @param {Project} project - Yarn project
- * @returns {void}
+ * @returns {Promise<void>}
  */
-const makeYarnState = (project: Project): void => {
+const makeYarnState = async (project: Project): Promise<void> => {
   if (!yarnState) {
     const portablePath = ppath.join(
       project.configuration.projectCwd as PortablePath,
       Filename.nodeModules,
       ".yarn-state.yml" as Filename
     );
-    const nativePath = npath.fromPortablePath(portablePath);
-    yarnState = parseSyml(readFileSync(nativePath).toString());
+    yarnState = parseSyml(await xfs.readFilePromise(portablePath, "utf8"));
   }
 };

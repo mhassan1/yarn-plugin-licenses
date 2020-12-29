@@ -18,12 +18,12 @@ import { ManifestWithLicenseInfo } from ".";
  *
  * @param {Project} project - Yarn project
  * @param {Package} pkg - Yarn package
- * @returns {ManifestWithLicenseInfo | null} Package manifest
+ * @returns {Promise<ManifestWithLicenseInfo | null>} Package manifest
  */
-export const getPackageManifest = (
+export const getPackageManifest = async (
   project: Project,
   pkg: Package
-): ManifestWithLicenseInfo | null => {
+): Promise<ManifestWithLicenseInfo | null> => {
   makePnPApi(project);
 
   const locator = structUtils.convertPackageToLocator(pkg);
@@ -40,7 +40,7 @@ export const getPackageManifest = (
     packageLocation,
     Filename.manifest
   );
-  const packageJson = fs.readFileSync(portablePath).toString();
+  const packageJson = await fs.readFilePromise(portablePath, "utf8");
 
   return JSON.parse(packageJson);
 };

@@ -24,7 +24,7 @@ type Linker = {
   getPackageManifest: (
     project: Project,
     pkg: Package
-  ) => ManifestWithLicenseInfo | null;
+  ) => Promise<ManifestWithLicenseInfo | null>;
 };
 
 export type ManifestWithLicenseInfo = Manifest & {

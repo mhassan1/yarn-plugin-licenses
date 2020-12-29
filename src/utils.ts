@@ -63,7 +63,7 @@ export const getTree = async (
     if (!pkg) continue;
     const locator = structUtils.convertPackageToLocator(pkg);
 
-    const packageManifest = linker.getPackageManifest(project, pkg);
+    const packageManifest = await linker.getPackageManifest(project, pkg);
     if (packageManifest === null) continue;
 
     const { license, url, vendorName, vendorUrl } = getLicenseInfoFromManifest(
