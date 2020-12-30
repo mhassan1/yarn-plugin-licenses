@@ -3,5 +3,15 @@
     "^.+\\.ts$": "ts-jest"
   },
   "testRegex": "(/__tests__/.*|(\\.|/)test)\\.ts$",
-  "moduleFileExtensions": ["ts", "js"]
+  "moduleFileExtensions": ["ts", "js"],
+  "collectCoverage": true,
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 95,
+      "lines": 95,
+      "statements": 90
+    }
+  },
+  "coverageReporters": ["text"]
 }
