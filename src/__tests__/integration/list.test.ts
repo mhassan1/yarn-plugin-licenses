@@ -66,11 +66,7 @@ describe("getTree", () => {
   ])("should list licenses %s", async (description, recursive, expected) => {
     const cwd = ppath.join(
       pluginRootDir,
-      "src" as PortablePath,
-      "__tests__" as PortablePath,
-      "integration" as PortablePath,
-      "fixtures" as PortablePath,
-      "test-package-node-modules" as PortablePath
+      "src/__tests__/integration/fixtures/test-package-node-modules" as PortablePath
     );
     const configuration = await Configuration.find(
       cwd,

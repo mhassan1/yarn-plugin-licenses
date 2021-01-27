@@ -15,11 +15,7 @@ import { ManifestWithLicenseInfo, resolveLinker } from "./linkers";
 export const pluginRootDir: PortablePath =
   npath.basename(__dirname) === "@yarnpkg"
     ? // __dirname = `<rootDir>/bundles/@yarnpkg`
-      ppath.join(
-        npath.toPortablePath(__dirname),
-        ".." as PortablePath,
-        ".." as PortablePath
-      )
+      ppath.join(npath.toPortablePath(__dirname), "../.." as PortablePath)
     : // __dirname = `<rootDir>/src`
       ppath.join(npath.toPortablePath(__dirname), ".." as PortablePath);
 
