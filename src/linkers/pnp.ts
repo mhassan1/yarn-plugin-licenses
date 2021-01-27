@@ -3,27 +3,20 @@
 
 import { getPnpPath } from "@yarnpkg/plugin-pnp";
 import { Package, Project, structUtils } from "@yarnpkg/core";
-import {
-  VirtualFS,
-  ZipOpenFS,
-  Filename,
-  PortablePath,
-  ppath,
-} from "@yarnpkg/fslib";
+import { VirtualFS, ZipOpenFS, PortablePath } from "@yarnpkg/fslib";
 import { getLibzipSync } from "@yarnpkg/libzip";
-import { ManifestWithLicenseInfo } from ".";
 
 /**
- * Get package manifest with `pnp` linker for a given Yarn project and package
+ * Get package path with `pnp` linker for a given Yarn project and package
  *
  * @param {Project} project - Yarn project
  * @param {Package} pkg - Yarn package
- * @returns {Promise<ManifestWithLicenseInfo | null>} Package manifest
+ * @returns {Promise<PortablePath | null>} Package path
  */
-export const getPackageManifest = async (
+export const getPackagePath = async (
   project: Project,
   pkg: Package
-): Promise<ManifestWithLicenseInfo | null> => {
+): Promise<PortablePath | null> => {
   makePnPApi(project);
 
   const locator = structUtils.convertPackageToLocator(pkg);
@@ -36,13 +29,7 @@ export const getPackageManifest = async (
   if (!packageInformation) return null;
 
   const { packageLocation } = packageInformation;
-  const portablePath: PortablePath = ppath.join(
-    packageLocation,
-    Filename.manifest
-  );
-  const packageJson = await fs.readFilePromise(portablePath, "utf8");
-
-  return JSON.parse(packageJson);
+  return packageLocation;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -62,9 +49,9 @@ const makePnPApi = (project: Project) => {
 };
 
 /**
- * Instantiate the virtual file system for reading package manifests in PnP
+ * Instantiate the virtual file system for reading package files in PnP
  */
-const fs = new VirtualFS({
+export const fs = new VirtualFS({
   baseFs: new ZipOpenFS({
     libzip: getLibzipSync(),
     readOnlyArchives: true,

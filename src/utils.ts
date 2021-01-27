@@ -5,9 +5,10 @@ import {
   structUtils,
   miscUtils,
   formatUtils,
+  Manifest,
 } from "@yarnpkg/core";
-import { PortablePath, ppath, npath } from "@yarnpkg/fslib";
-import { ManifestWithLicenseInfo, resolveLinker } from "./linkers";
+import { PortablePath, ppath, npath, Filename } from "@yarnpkg/fslib";
+import { resolveLinker } from "./linkers";
 
 /**
  * Root directory of this plugin, for use in automated tests
@@ -59,8 +60,15 @@ export const getTree = async (
     if (!pkg) continue;
     const locator = structUtils.convertPackageToLocator(pkg);
 
-    const packageManifest = await linker.getPackageManifest(project, pkg);
-    if (packageManifest === null) continue;
+    const packagePath = await linker.getPackagePath(project, pkg);
+    if (packagePath === null) continue;
+
+    const packageManifest: ManifestWithLicenseInfo = JSON.parse(
+      await linker.fs.readFilePromise(
+        ppath.join(packagePath, Filename.manifest),
+        "utf8"
+      )
+    );
 
     const { license, url, vendorName, vendorUrl } = getLicenseInfoFromManifest(
       packageManifest
@@ -141,6 +149,13 @@ const getLicenseInfoFromManifest = (
     vendorName: author?.name,
     vendorUrl: homepage || author?.url,
   };
+};
+
+type ManifestWithLicenseInfo = Manifest & {
+  license?: string | { type: string };
+  repository?: { url: string };
+  homepage?: string;
+  author?: { name: string; url: string };
 };
 
 type LicenseInfo = {
