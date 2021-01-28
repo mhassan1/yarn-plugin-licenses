@@ -12,6 +12,7 @@ yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-licens
 
 ```shell script
 yarn licenses list --help
+yarn licenses generate-disclaimer --help
 ```
 
 ## Testing
