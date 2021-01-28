@@ -137,15 +137,27 @@ export const getSortedPackages = (
     });
   }
 
-  const sortedDescriptors = miscUtils.sortMap(storedDescriptors, (pkg) =>
-    structUtils.stringifyDescriptor(pkg)
-  );
+  const sortedDescriptors = miscUtils.sortMap(storedDescriptors, [
+    (descriptor) => structUtils.stringifyIdent(descriptor),
+    // store virtual descriptors before non-virtual descriptors because the `node-modules` linker prefers virtual
+    (descriptor) => (structUtils.isVirtualDescriptor(descriptor) ? "0" : "1"),
+    (descriptor) => descriptor.range,
+  ]);
+
+  const seenDescriptorHashes = new Set<string>();
 
   for (const descriptor of sortedDescriptors.values()) {
     const identHash = project.storedResolutions.get(descriptor.descriptorHash);
     if (!identHash) continue;
     const pkg = project.storedPackages.get(identHash);
     if (!pkg) continue;
+
+    const { descriptorHash } = structUtils.isVirtualDescriptor(descriptor)
+      ? structUtils.devirtualizeDescriptor(descriptor)
+      : descriptor;
+    if (seenDescriptorHashes.has(descriptorHash)) continue;
+    seenDescriptorHashes.add(descriptorHash);
+
     packages.set(descriptor, pkg);
   }
 

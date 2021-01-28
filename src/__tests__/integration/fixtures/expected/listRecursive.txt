@@ -2,7 +2,7 @@
 │  ├─ axios@npm:0.20.0 (via npm:^0.20.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  └─ VendorUrl: https://github.com/axios/axios
-│  ├─ follow-redirects@npm:1.13.0 (via npm:^1.10.0)
+│  ├─ follow-redirects@npm:1.13.2 [535d9] (via npm:^1.10.0 [535d9])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
 │  ├─ is-promise@npm:3.0.0 (via npm:^3.0.0)
