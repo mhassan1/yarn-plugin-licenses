@@ -1,19 +1,18 @@
 import { Project, Package, structUtils } from "@yarnpkg/core";
 import { parseSyml } from "@yarnpkg/parsers";
 import { xfs, ppath, PortablePath, Filename } from "@yarnpkg/fslib";
-import { ManifestWithLicenseInfo } from ".";
 
 /**
- * Get package manifest with `node-modules` linker for a given Yarn project and package
+ * Get package path with `node-modules` linker for a given Yarn project and package
  *
  * @param {Project} project - Yarn project
  * @param {Package} pkg - Yarn package
- * @returns {Promise<ManifestWithLicenseInfo | null>} Package manifest
+ * @returns {Promise<PortablePath | null>} Package path
  */
-export const getPackageManifest = async (
+export const getPackagePath = async (
   project: Project,
   pkg: Package
-): Promise<ManifestWithLicenseInfo | null> => {
+): Promise<PortablePath | null> => {
   await makeYarnState(project);
 
   const locator = structUtils.convertPackageToLocator(pkg);
@@ -21,13 +20,7 @@ export const getPackageManifest = async (
   if (!entry) return null;
 
   const location = entry.locations[0];
-  const relativePath = location
-    ? ppath.join(location, Filename.manifest)
-    : Filename.manifest;
-  const portablePath = ppath.join(project.cwd, relativePath);
-  const packageJson = await xfs.readFilePromise(portablePath, "utf8");
-
-  return JSON.parse(packageJson);
+  return location ? ppath.join(project.cwd, location) : project.cwd;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,3 +42,8 @@ const makeYarnState = async (project: Project): Promise<void> => {
     yarnState = parseSyml(await xfs.readFilePromise(portablePath, "utf8"));
   }
 };
+
+/**
+ * Expose the virtual file system for reading package files
+ */
+export const fs = xfs;

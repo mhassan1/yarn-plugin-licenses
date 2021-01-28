@@ -15,9 +15,19 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.10.0":
-  version: 1.13.0
-  resolution: "follow-redirects@npm:1.13.0"
-  checksum: f220828d3f153da30ea616fdbe9f6676e74e4e68c51d336a751037c1d556e2de34aa5918f58951fa19bb6517c9c88b4403a0a8bdfc40d3e779d37def2ac0f2c4
+  version: 1.13.2
+  resolution: "follow-redirects@npm:1.13.2"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 76a23a75e5eedb872fc223fcce5b267fd315b123e0fc38f8d7701283445418d9ead72c7ff8a468d95042526a34e5677bfe76b85f973aa0563890c695c975c451
+  languageName: node
+  linkType: hard
+
+"is-promise@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "is-promise@npm:3.0.0"
+  checksum: 6561fc4d38c512f0da4a2b2fb42be9851ceb88c39f2b87fd25c6e16f01b4bf18fb9b5278047f1616af6c785b4ffdb86b96f1c190b61ed93c73037b46d6e56d82
   languageName: node
   linkType: hard
 
@@ -28,18 +38,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"package1-82e61e@workspace:packages/package1":
+"package1@workspace:packages/package1":
   version: 0.0.0-use.local
-  resolution: "package1-82e61e@workspace:packages/package1"
+  resolution: "package1@workspace:packages/package1"
   dependencies:
     axios: ^0.20.0
+    is-promise: ^3.0.0
   languageName: unknown
   linkType: soft
 
-"root-workspace-0b6124@workspace:.":
+"realms-shim@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "realms-shim@npm:1.2.2"
+  checksum: 78ea2b7ca7123aef6ba7d5431b49650611212c8f735b86e2e7a7b1cdf417aab97718fb3118d41422295a96184b40e6317f5ead11856a1664819e6c284069d772
+  languageName: node
+  linkType: hard
+
+"test-package@workspace:.":
   version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
+  resolution: "test-package@workspace:."
   dependencies:
+    axios: ^0.20.0
     is-promise: ^4.0.0
+    realms-shim: ^1.2.2
   languageName: unknown
   linkType: soft

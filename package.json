@@ -1,6 +1,6 @@
 {
   "name": "yarn-plugin-licenses",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Yarn v2 plugin that adds `yarn licenses` commands",
   "main": "src/index.ts",
   "repository": {

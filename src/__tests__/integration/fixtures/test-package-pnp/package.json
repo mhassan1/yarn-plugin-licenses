@@ -1,9 +1,14 @@
 {
+  "name": "test-package",
   "workspaces": [
     "packages/*"
   ],
   "private": true,
+  "dependencies": {
+    "realms-shim": "^1.2.2"
+  },
   "devDependencies": {
+    "axios": "^0.20.0",
     "is-promise": "^4.0.0"
   }
 }

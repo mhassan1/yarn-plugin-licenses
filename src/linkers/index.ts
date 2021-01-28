@@ -1,6 +1,7 @@
-import { Project, Package, Manifest } from "@yarnpkg/core";
+import { Project, Package } from "@yarnpkg/core";
 import * as pnp from "./pnp";
 import * as nodeModules from "./node-modules";
+import { PortablePath, FakeFS } from "@yarnpkg/fslib";
 
 /* istanbul ignore next */
 /**
@@ -21,15 +22,9 @@ export const resolveLinker = (nodeLinker: string): Linker => {
 };
 
 type Linker = {
-  getPackageManifest: (
+  getPackagePath: (
     project: Project,
     pkg: Package
-  ) => Promise<ManifestWithLicenseInfo | null>;
-};
-
-export type ManifestWithLicenseInfo = Manifest & {
-  license?: string | { type: string };
-  repository?: { url: string };
-  homepage?: string;
-  author?: { name: string; url: string };
+  ) => Promise<PortablePath | null>;
+  fs: FakeFS<PortablePath>;
 };
