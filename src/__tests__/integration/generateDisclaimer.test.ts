@@ -1,23 +1,35 @@
 import { Configuration, Project } from "@yarnpkg/core";
-import { xfs, ppath, npath, PortablePath } from "@yarnpkg/fslib";
+import {
+  xfs,
+  ppath,
+  npath,
+  PortablePath,
+  normalizeLineEndings,
+} from "@yarnpkg/fslib";
 import PnpPlugin from "@yarnpkg/plugin-pnp";
 import { pluginRootDir, getDisclaimer } from "../../utils";
 import { execSync } from "child_process";
 
-const expectedNonRecursive = xfs.readFileSync(
-  ppath.join(
-    __dirname as PortablePath,
-    "fixtures/expected/disclaimer.txt" as PortablePath
-  ),
-  "utf8"
+const expectedNonRecursive = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/disclaimer.txt" as PortablePath
+    ),
+    "utf8"
+  )
 );
 
-const expectedRecursive = xfs.readFileSync(
-  ppath.join(
-    __dirname as PortablePath,
-    "fixtures/expected/disclaimerRecursive.txt" as PortablePath
-  ),
-  "utf8"
+const expectedRecursive = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/disclaimerRecursive.txt" as PortablePath
+    ),
+    "utf8"
+  )
 );
 
 describe.each(["pnp", "node-modules"])(

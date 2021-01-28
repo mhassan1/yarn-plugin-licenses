@@ -1,32 +1,47 @@
 import { Configuration, Project, treeUtils } from "@yarnpkg/core";
-import { xfs, ppath, npath, PortablePath } from "@yarnpkg/fslib";
+import {
+  xfs,
+  ppath,
+  npath,
+  PortablePath,
+  normalizeLineEndings,
+} from "@yarnpkg/fslib";
 import PnpPlugin from "@yarnpkg/plugin-pnp";
 import { pluginRootDir, getTree } from "../../utils";
 import { execSync } from "child_process";
 import { Writable } from "stream";
 
-const expectedNonRecursive = xfs.readFileSync(
-  ppath.join(
-    __dirname as PortablePath,
-    "fixtures/expected/list.txt" as PortablePath
-  ),
-  "utf8"
+const expectedNonRecursive = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/list.txt" as PortablePath
+    ),
+    "utf8"
+  )
 );
 
-const expectedRecursive = xfs.readFileSync(
-  ppath.join(
-    __dirname as PortablePath,
-    "fixtures/expected/listRecursive.txt" as PortablePath
-  ),
-  "utf8"
+const expectedRecursive = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/listRecursive.txt" as PortablePath
+    ),
+    "utf8"
+  )
 );
 
-const expectedJson = xfs.readFileSync(
-  ppath.join(
-    __dirname as PortablePath,
-    "fixtures/expected/listJson.txt" as PortablePath
-  ),
-  "utf8"
+const expectedJson = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/listJson.txt" as PortablePath
+    ),
+    "utf8"
+  )
 );
 
 describe.each(["pnp", "node-modules"])("licenses list (%s)", (linker) => {
