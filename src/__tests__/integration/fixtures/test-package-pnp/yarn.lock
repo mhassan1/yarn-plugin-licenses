@@ -28,6 +28,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dicer@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "dicer@npm:0.3.0"
+  dependencies:
+    streamsearch: 0.1.2
+  checksum: eb06a8c283287da1f0034cde3f2bafe8bbd70636d4c9b12783f36d919c88533d6d285e044197853e03c1a2ea5d68f8ebcf59d366bd873a4a91e5d370e9871ad7
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.10.0":
   version: 1.13.2
   resolution: "follow-redirects@npm:1.13.2"
@@ -99,11 +108,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"streamsearch@npm:0.1.2":
+  version: 0.1.2
+  resolution: "streamsearch@npm:0.1.2"
+  checksum: f72befba95082d49be19cd4318112bc141f6cd7cbb201ee8079887f6f3cbcdf79c311977ce0eaa93d7d8c3e6b9727412f6177a87ced5b98d0fd4075723ad8eaf
+  languageName: node
+  linkType: hard
+
 "test-package@workspace:.":
   version: 0.0.0-use.local
   resolution: "test-package@workspace:."
   dependencies:
     axios: ^0.20.0
+    dicer: ^0.3.0
     is-ci: ^1.0.0
     is-promise: ^4.0.0
     realms-shim: ^1.2.2
