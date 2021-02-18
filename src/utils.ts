@@ -192,14 +192,27 @@ export const getSortedPackages = async (
  * @param {ManifestWithLicenseInfo} manifest - Manifest with license information
  * @returns {LicenseInfo} License information
  */
-const getLicenseInfoFromManifest = (
+export const getLicenseInfoFromManifest = (
   manifest: ManifestWithLicenseInfo
 ): LicenseInfo => {
-  const { license, repository, homepage, author } = manifest;
+  const { license, licenses, repository, homepage, author } = manifest;
+
+  const getNormalizedLicense = () => {
+    if (license) {
+      return normalizeManifestLicenseValue(license);
+    }
+    if (licenses) {
+      if (licenses.length === 1) {
+        return normalizeManifestLicenseValue(licenses[0]);
+      } else if (licenses.length) {
+        return `(${licenses.map(normalizeManifestLicenseValue).join(" OR ")})`;
+      }
+    }
+    return UNKNOWN_LICENSE;
+  };
 
   return {
-    license:
-      (typeof license !== "string" ? license?.type : license) || "UNKNOWN",
+    license: getNormalizedLicense(),
     url: repository?.url || homepage,
     vendorName: author?.name,
     vendorUrl: homepage || author?.url,
@@ -208,11 +221,29 @@ const getLicenseInfoFromManifest = (
 
 type ManifestWithLicenseInfo = {
   name: string;
-  license?: string | { type: string };
+  license?: ManifestLicenseValue;
+  licenses?: ManifestLicenseValue[];
   repository?: { url: string };
   homepage?: string;
   author?: { name: string; url: string };
 };
+
+type ManifestLicenseValue = string | { type: string };
+
+const UNKNOWN_LICENSE = "UNKNOWN";
+
+/**
+ * Normalize a manifest license value into a license string
+ *
+ * @param {ManifestLicenseValue} manifestLicenseValue - Manifest license value
+ * @returns {string} License string
+ */
+const normalizeManifestLicenseValue = (
+  manifestLicenseValue: ManifestLicenseValue
+): string =>
+  (typeof manifestLicenseValue !== "string"
+    ? manifestLicenseValue.type
+    : manifestLicenseValue) || UNKNOWN_LICENSE;
 
 type LicenseInfo = {
   license: string;
