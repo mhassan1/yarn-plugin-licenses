@@ -1,5 +1,7 @@
 import {
   Project,
+  Cache,
+  ThrowReport,
   Descriptor,
   Package,
   treeUtils,
@@ -26,17 +28,23 @@ export const pluginRootDir: PortablePath =
  * @param {Project} project - Yarn project
  * @param {boolean} json - Whether to output as JSON
  * @param {boolean} recursive - Whether to compute licenses recursively
+ * @param {boolean} production - Whether to exclude devDependencies
  * @returns {treeUtils.TreeNode} Root tree node
  */
 export const getTree = async (
   project: Project,
   json: boolean,
-  recursive: boolean
+  recursive: boolean,
+  production: boolean
 ): Promise<treeUtils.TreeNode> => {
   const rootChildren: treeUtils.TreeMap = {};
   const root: treeUtils.TreeNode = { children: rootChildren };
 
-  const sortedPackages = getSortedPackages(project, recursive);
+  const sortedPackages = await getSortedPackages(
+    project,
+    recursive,
+    production
+  );
 
   const linker = resolveLinker(project.configuration.get("nodeLinker"));
 
@@ -119,20 +127,34 @@ export const getTree = async (
  *
  * @param {Project} project - Yarn project
  * @param {boolean} recursive - Whether to get packages recursively
- * @returns {Map<Descriptor, Package>} Map of packages in the project
+ * @param {boolean} production - Whether to exclude devDependencies
+ * @returns {Promise<Map<Descriptor, Package>>} Map of packages in the project
  */
-export const getSortedPackages = (
+export const getSortedPackages = async (
   project: Project,
-  recursive: boolean
-): Map<Descriptor, Package> => {
+  recursive: boolean,
+  production: boolean
+): Promise<Map<Descriptor, Package>> => {
   const packages = new Map<Descriptor, Package>();
   let storedDescriptors: Iterable<Descriptor>;
   if (recursive) {
+    if (production) {
+      for (const workspace of project.workspaces) {
+        workspace.manifest.devDependencies.clear();
+      }
+      const cache = await Cache.find(project.configuration);
+      await project.resolveEverything({ report: new ThrowReport(), cache });
+    }
     storedDescriptors = project.storedDescriptors.values();
   } else {
     storedDescriptors = project.workspaces.flatMap((workspace) => {
       const dependencies = [workspace.anchoredDescriptor];
-      dependencies.push(...workspace.dependencies.values());
+      for (const [identHash, dependency] of workspace.dependencies.entries()) {
+        if (production && workspace.manifest.devDependencies.has(identHash)) {
+          continue;
+        }
+        dependencies.push(dependency);
+      }
       return dependencies;
     });
   }
@@ -208,13 +230,19 @@ const stringifyKeyValue = (key: string, value: string, json: boolean) => {
  *
  * @param {Project} project - Yarn project
  * @param {boolean} recursive - Whether to include licenses recursively
+ * @param {boolean} production - Whether to exclude devDependencies
  * @returns {string} License disclaimer
  */
 export const getDisclaimer = async (
   project: Project,
-  recursive: boolean
+  recursive: boolean,
+  production: boolean
 ): Promise<string> => {
-  const sortedPackages = getSortedPackages(project, recursive);
+  const sortedPackages = await getSortedPackages(
+    project,
+    recursive,
+    production
+  );
 
   const linker = resolveLinker(project.configuration.get("nodeLinker"));
 

@@ -7,6 +7,7 @@ import {
   normalizeLineEndings,
 } from "@yarnpkg/fslib";
 import PnpPlugin from "@yarnpkg/plugin-pnp";
+import NpmPlugin from "@yarnpkg/plugin-npm";
 import { pluginRootDir, getTree } from "../../utils";
 import { execSync } from "child_process";
 import { Writable } from "stream";
@@ -28,6 +29,28 @@ const expectedRecursive = normalizeLineEndings(
     ppath.join(
       __dirname as PortablePath,
       "fixtures/expected/listRecursive.txt" as PortablePath
+    ),
+    "utf8"
+  )
+);
+
+const expectedNonRecursiveProduction = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/listProduction.txt" as PortablePath
+    ),
+    "utf8"
+  )
+);
+
+const expectedRecursiveProduction = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/listRecursiveProduction.txt" as PortablePath
     ),
     "utf8"
   )
@@ -62,6 +85,20 @@ describe.each(["pnp", "node-modules"])("licenses list (%s)", (linker) => {
     expect(stdout).toBe(expectedRecursive);
   });
 
+  it("should list licenses for production", () => {
+    const stdout = execSync("yarn licenses list --production", {
+      cwd,
+    }).toString();
+    expect(stdout).toBe(expectedNonRecursiveProduction);
+  });
+
+  it("should list licenses recursively for production", () => {
+    const stdout = execSync("yarn licenses list --recursive --production", {
+      cwd,
+    }).toString();
+    expect(stdout).toBe(expectedRecursiveProduction);
+  });
+
   it("should list licenses as json", () => {
     const stdout = execSync("yarn licenses list --json", { cwd }).toString();
     expect(stdout).toBe(expectedJson);
@@ -70,43 +107,56 @@ describe.each(["pnp", "node-modules"])("licenses list (%s)", (linker) => {
 
 describe("getTree", () => {
   it.each([
-    ["non-recursively", false, expectedNonRecursive],
-    ["recursively", true, expectedRecursive],
-  ])("should list licenses %s", async (description, recursive, expected) => {
-    const cwd = ppath.join(
-      pluginRootDir,
-      "src/__tests__/integration/fixtures/test-package-node-modules" as PortablePath
-    );
-    const configuration = await Configuration.find(
-      cwd,
-      {
-        modules: new Map([[`@yarnpkg/plugin-pnp`, PnpPlugin]]),
-        plugins: new Set([`@yarnpkg/plugin-pnp`]),
-      },
-      { useRc: false }
-    );
-    const { project } = await Project.find(configuration, cwd);
+    ["non-recursively", false, false, expectedNonRecursive],
+    ["recursively", true, false, expectedRecursive],
+    [
+      "non-recursively for production",
+      false,
+      true,
+      expectedNonRecursiveProduction,
+    ],
+    ["recursively for production", true, true, expectedRecursiveProduction],
+  ])(
+    "should list licenses %s",
+    async (description, recursive, production, expected) => {
+      const cwd = ppath.join(
+        pluginRootDir,
+        "src/__tests__/integration/fixtures/test-package-node-modules" as PortablePath
+      );
+      const configuration = await Configuration.find(
+        cwd,
+        {
+          modules: new Map([
+            [`@yarnpkg/plugin-pnp`, PnpPlugin],
+            [`@yarnpkg/plugin-npm`, NpmPlugin],
+          ]),
+          plugins: new Set([`@yarnpkg/plugin-pnp`, `@yarnpkg/plugin-npm`]),
+        },
+        { useRc: false }
+      );
+      const { project } = await Project.find(configuration, cwd);
 
-    await project.restoreInstallState();
+      await project.restoreInstallState();
 
-    const tree = await getTree(project, false, recursive);
+      const tree = await getTree(project, false, recursive, production);
 
-    let stdout = "";
-    const stdoutStream = new Writable({
-      write: (chunk, enc, next) => {
-        stdout += chunk.toString();
-        next();
-      },
-    });
+      let stdout = "";
+      const stdoutStream = new Writable({
+        write: (chunk, enc, next) => {
+          stdout += chunk.toString();
+          next();
+        },
+      });
 
-    treeUtils.emitTree(tree, {
-      configuration,
-      stdout: stdoutStream,
-      json: false,
-      separators: 1,
-    });
-    await new Promise((resolve) => setImmediate(resolve));
+      treeUtils.emitTree(tree, {
+        configuration,
+        stdout: stdoutStream,
+        json: false,
+        separators: 1,
+      });
+      await new Promise((resolve) => setImmediate(resolve));
 
-    expect(stdout).toBe(expected);
-  });
+      expect(stdout).toBe(expected);
+    }
+  );
 });

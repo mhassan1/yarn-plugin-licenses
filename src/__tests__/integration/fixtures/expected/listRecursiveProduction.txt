@@ -2,27 +2,16 @@
 │  ├─ axios@npm:0.20.0 (via npm:^0.20.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  └─ VendorUrl: https://github.com/axios/axios
-│  ├─ ci-info@npm:1.6.0 (via npm:^1.5.0)
-│  │  ├─ URL: https://github.com/watson/ci-info.git
-│  │  └─ VendorUrl: https://github.com/watson/ci-info
 │  ├─ ci-info@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/ci-info.git
 │  │  └─ VendorUrl: https://github.com/watson/ci-info
 │  ├─ follow-redirects@npm:1.13.2 [535d9] (via npm:^1.10.0 [535d9])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
-│  │  ├─ URL: https://github.com/watson/is-ci.git
-│  │  └─ VendorUrl: https://github.com/watson/is-ci
 │  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
 │  │  └─ VendorUrl: https://github.com/watson/is-ci
-│  ├─ is-function@npm:1.0.2 (via npm:^1.0.2)
-│  │  ├─ URL: git://github.com/grncdr/js-is-function.git
-│  │  └─ VendorUrl: https://github.com/grncdr/js-is-function
-│  ├─ is-promise@npm:3.0.0 (via npm:^3.0.0)
-│  │  └─ URL: https://github.com/then/is-promise.git
-│  └─ is-promise@npm:4.0.0 (via npm:^4.0.0)
+│  └─ is-promise@npm:3.0.0 (via npm:^3.0.0)
 │     └─ URL: https://github.com/then/is-promise.git
 │
 ├─ UNKNOWN
