@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.0] - 2021-02-18
+[0.4.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.3.0...v0.4.0
+
+- Add `--production` flag for excluding `devDependencies`
+
 ## [0.3.0] - 2021-01-28
 [0.3.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.2.1...v0.3.0
 

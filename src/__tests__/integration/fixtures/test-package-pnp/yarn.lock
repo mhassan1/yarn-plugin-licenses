@@ -14,6 +14,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ci-info@npm:^1.5.0":
+  version: 1.6.0
+  resolution: "ci-info@npm:1.6.0"
+  checksum: c53d8ead84b00b44a26099b9afbe25d07d1cf02a0b2e354f97e4765ab965525d5d831d264b045737ac03076be3c34e87b64dee0d94cfd87cfc227299cb1c0137
+  languageName: node
+  linkType: hard
+
+"ci-info@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "ci-info@npm:2.0.0"
+  checksum: 553fe83c085fce5e19e20f85b993f24a463e6f805803837a8868607bb68b1300567868694a5dff1beca6c54926a4c0be1cc9ef0c35f810653d590bf64183f6a0
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.10.0":
   version: 1.13.2
   resolution: "follow-redirects@npm:1.13.2"
@@ -21,6 +35,35 @@ __metadata:
     debug:
       optional: true
   checksum: 76a23a75e5eedb872fc223fcce5b267fd315b123e0fc38f8d7701283445418d9ead72c7ff8a468d95042526a34e5677bfe76b85f973aa0563890c695c975c451
+  languageName: node
+  linkType: hard
+
+"is-ci@npm:^1.0.0":
+  version: 1.2.1
+  resolution: "is-ci@npm:1.2.1"
+  dependencies:
+    ci-info: ^1.5.0
+  bin:
+    is-ci: bin.js
+  checksum: cdcdeba94278edf4e6a305aba93ecffd58cb35a08ebf879a7f715e5538be55ad23a841f48a796b71beae36e0c6e2290eca38cf8a8feed563fb62090879ead93b
+  languageName: node
+  linkType: hard
+
+"is-ci@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "is-ci@npm:2.0.0"
+  dependencies:
+    ci-info: ^2.0.0
+  bin:
+    is-ci: bin.js
+  checksum: 09083018edafd63221ff0506356f13c0aaf4b75a6435ea648bc67d07ddab199b2d5b9297de43d0821df1a14c18cd9f1edd1775a0166abfe37390843e79137213
+  languageName: node
+  linkType: hard
+
+"is-function@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "is-function@npm:1.0.2"
+  checksum: 894562b5e4dcf3544eb0b5c26ba94e08c99007728059782f5e863296e865af9b7d2bcad06057d20bb862943dcfc9bb1387fedb4cdc953af93bd0a70ad61a3ba1
   languageName: node
   linkType: hard
 
@@ -43,6 +86,8 @@ __metadata:
   resolution: "package1@workspace:packages/package1"
   dependencies:
     axios: ^0.20.0
+    is-ci: ^2.0.0
+    is-function: ^1.0.2
     is-promise: ^3.0.0
   languageName: unknown
   linkType: soft
@@ -59,6 +104,7 @@ __metadata:
   resolution: "test-package@workspace:."
   dependencies:
     axios: ^0.20.0
+    is-ci: ^1.0.0
     is-promise: ^4.0.0
     realms-shim: ^1.2.2
   languageName: unknown

@@ -14,6 +14,10 @@ export class LicensesListCommand extends Command<CommandContext> {
   recursive: boolean = false;
 
   // eslint-disable-next-line @typescript-eslint/no-inferrable-types
+  @Command.Boolean(`--production`)
+  production: boolean = false;
+
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   @Command.Boolean(`--json`)
   json: boolean = false;
 
@@ -23,12 +27,18 @@ export class LicensesListCommand extends Command<CommandContext> {
       This command prints the license information for packages in the project. By default, only direct dependencies are listed.
 
       If \`-R,--recursive\` is set, the listing will include transitive dependencies (dependencies of direct dependencies).
+
+      If \`--production\` is set, the listing will exclude development dependencies.
     `,
     examples: [
       [`List all licenses of direct dependencies`, `$0 licenses list`],
       [
         `List all licenses of direct and transitive dependencies`,
         `$0 licenses list --recursive`,
+      ],
+      [
+        `List all licenses of production dependencies only`,
+        `$0 licenses list --production`,
       ],
     ],
   });
@@ -50,7 +60,12 @@ export class LicensesListCommand extends Command<CommandContext> {
 
     await project.restoreInstallState();
 
-    const tree = await getTree(project, this.json, this.recursive);
+    const tree = await getTree(
+      project,
+      this.json,
+      this.recursive,
+      this.production
+    );
 
     treeUtils.emitTree(tree, {
       configuration,

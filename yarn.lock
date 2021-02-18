@@ -1312,7 +1312,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/cli@npm:^2.4.0":
+"@yarnpkg/cli@npm:*, @yarnpkg/cli@npm:^2.4.0":
   version: 2.4.0
   resolution: "@yarnpkg/cli@npm:2.4.0"
   dependencies:
@@ -1610,7 +1610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-pack@npm:^2.2.3":
+"@yarnpkg/plugin-pack@npm:*, @yarnpkg/plugin-pack@npm:^2.2.3":
   version: 2.2.3
   resolution: "@yarnpkg/plugin-pack@npm:2.2.3"
   dependencies:
@@ -8225,6 +8225,7 @@ typescript@^4.1.3:
     "@yarnpkg/fslib": ^2.4.0
     "@yarnpkg/libzip": ^2.2.1
     "@yarnpkg/parsers": ^2.3.0
+    "@yarnpkg/plugin-npm": ^2.4.0
     "@yarnpkg/plugin-pnp": ^2.4.0
     clipanion: ^2.6.2
     eslint: ^7.16.0
