@@ -5,7 +5,7 @@ This is a Yarn v2 plugin that adds `yarn licenses` commands (similar to what Yar
 ## Install
 
 ```
-yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-licenses/v0.3.0/bundles/@yarnpkg/plugin-licenses.js
+yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-licenses/v0.4.0/bundles/@yarnpkg/plugin-licenses.js
 ```
 
 ## Usage
