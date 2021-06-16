@@ -67,6 +67,28 @@ const expectedJson = normalizeLineEndings(
   )
 );
 
+const expectedExcludeMetadata = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/listExcludeMetadata.txt" as PortablePath
+    ),
+    "utf8"
+  )
+);
+
+const expectedExcludeMetadataJson = normalizeLineEndings(
+  "\n",
+  xfs.readFileSync(
+    ppath.join(
+      __dirname as PortablePath,
+      "fixtures/expected/listExcludeMetadataJson.txt" as PortablePath
+    ),
+    "utf8"
+  )
+);
+
 describe.each(["pnp", "node-modules"])("licenses list (%s)", (linker) => {
   const cwd = npath.join(__dirname, "fixtures", `test-package-${linker}`);
   beforeAll(() => {
@@ -103,22 +125,34 @@ describe.each(["pnp", "node-modules"])("licenses list (%s)", (linker) => {
     const stdout = execSync("yarn licenses list --json", { cwd }).toString();
     expect(stdout).toBe(expectedJson);
   });
+
+  it("should list licenses without metadata", () => {
+    const stdout = execSync("yarn licenses list --exclude-metadata", { cwd }).toString();
+    expect(stdout).toBe(expectedExcludeMetadata);
+  });
+
+  it("should list licenses without metadata as json", () => {
+    const stdout = execSync("yarn licenses list --json --exclude-metadata", { cwd }).toString();
+    expect(stdout).toBe(expectedExcludeMetadataJson);
+  });
 });
 
 describe("getTree", () => {
   it.each([
-    ["non-recursively", false, false, expectedNonRecursive],
-    ["recursively", true, false, expectedRecursive],
+    ["non-recursively", false, false, false, expectedNonRecursive],
+    ["recursively", true, false, false, expectedRecursive],
     [
       "non-recursively for production",
       false,
       true,
+      false,
       expectedNonRecursiveProduction,
     ],
-    ["recursively for production", true, true, expectedRecursiveProduction],
+    ["recursively for production", true, true, false, expectedRecursiveProduction],
+    ["exclude metadata", false, false, true, expectedExcludeMetadata],
   ])(
     "should list licenses %s",
-    async (description, recursive, production, expected) => {
+    async (description, recursive, production, excludeMetadata, expected) => {
       const cwd = ppath.join(
         pluginRootDir,
         "src/__tests__/integration/fixtures/test-package-node-modules" as PortablePath
@@ -138,7 +172,7 @@ describe("getTree", () => {
 
       await project.restoreInstallState();
 
-      const tree = await getTree(project, false, recursive, production);
+      const tree = await getTree(project, false, recursive, production, excludeMetadata);
 
       let stdout = "";
       const stdoutStream = new Writable({

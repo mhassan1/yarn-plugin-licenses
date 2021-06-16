@@ -1,0 +1,15 @@
+├─ MIT
+│  ├─ axios@npm:0.20.0 (via npm:^0.20.0)
+│  ├─ dicer@npm:0.3.0 (via npm:^0.3.0)
+│  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
+│  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
+│  ├─ is-function@npm:1.0.2 (via npm:^1.0.2)
+│  ├─ is-promise@npm:3.0.0 (via npm:^3.0.0)
+│  └─ is-promise@npm:4.0.0 (via npm:^4.0.0)
+│
+├─ UNKNOWN
+│  ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+│  └─ test-package@workspace:. (via workspace:.)
+│
+└─ Apache-2.0
+   └─ realms-shim@npm:1.2.2 (via npm:^1.2.2)
