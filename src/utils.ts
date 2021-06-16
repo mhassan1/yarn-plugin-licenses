@@ -37,7 +37,7 @@ export const getTree = async (
   json: boolean,
   recursive: boolean,
   production: boolean,
-  excludeMetadata: boolean,
+  excludeMetadata: boolean
 ): Promise<treeUtils.TreeNode> => {
   const rootChildren: treeUtils.TreeMap = {};
   const root: treeUtils.TreeNode = { children: rootChildren };
@@ -84,41 +84,41 @@ export const getTree = async (
     const children = excludeMetadata
       ? {}
       : {
-        ...(url
-          ? {
-            url: {
-              value: formatUtils.tuple(
-                formatUtils.Type.NO_HINT,
-                stringifyKeyValue("URL", url, json)
-              ),
-            },
-          }
-          : {}),
-        ...(vendorName
-          ? {
-            vendorName: {
-              value: formatUtils.tuple(
-                formatUtils.Type.NO_HINT,
-                stringifyKeyValue("VendorName", vendorName, json)
-              ),
-            },
-          }
-          : {}),
-        ...(vendorUrl
-          ? {
-            vendorUrl: {
-              value: formatUtils.tuple(
-                formatUtils.Type.NO_HINT,
-                stringifyKeyValue("VendorUrl", vendorUrl, json)
-              ),
-            },
-          }
-          : {}),
-      }
+          ...(url
+            ? {
+                url: {
+                  value: formatUtils.tuple(
+                    formatUtils.Type.NO_HINT,
+                    stringifyKeyValue("URL", url, json)
+                  ),
+                },
+              }
+            : {}),
+          ...(vendorName
+            ? {
+                vendorName: {
+                  value: formatUtils.tuple(
+                    formatUtils.Type.NO_HINT,
+                    stringifyKeyValue("VendorName", vendorName, json)
+                  ),
+                },
+              }
+            : {}),
+          ...(vendorUrl
+            ? {
+                vendorUrl: {
+                  value: formatUtils.tuple(
+                    formatUtils.Type.NO_HINT,
+                    stringifyKeyValue("VendorUrl", vendorUrl, json)
+                  ),
+                },
+              }
+            : {}),
+        };
 
     const node: treeUtils.TreeNode = {
       value: nodeValue,
-      children
+      children,
     };
 
     const key = structUtils.stringifyLocator(locator);

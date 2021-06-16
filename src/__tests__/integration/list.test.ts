@@ -127,12 +127,16 @@ describe.each(["pnp", "node-modules"])("licenses list (%s)", (linker) => {
   });
 
   it("should list licenses without metadata", () => {
-    const stdout = execSync("yarn licenses list --exclude-metadata", { cwd }).toString();
+    const stdout = execSync("yarn licenses list --exclude-metadata", {
+      cwd,
+    }).toString();
     expect(stdout).toBe(expectedExcludeMetadata);
   });
 
   it("should list licenses without metadata as json", () => {
-    const stdout = execSync("yarn licenses list --json --exclude-metadata", { cwd }).toString();
+    const stdout = execSync("yarn licenses list --json --exclude-metadata", {
+      cwd,
+    }).toString();
     expect(stdout).toBe(expectedExcludeMetadataJson);
   });
 });
@@ -148,7 +152,13 @@ describe("getTree", () => {
       false,
       expectedNonRecursiveProduction,
     ],
-    ["recursively for production", true, true, false, expectedRecursiveProduction],
+    [
+      "recursively for production",
+      true,
+      true,
+      false,
+      expectedRecursiveProduction,
+    ],
     ["exclude metadata", false, false, true, expectedExcludeMetadata],
   ])(
     "should list licenses %s",
@@ -172,7 +182,13 @@ describe("getTree", () => {
 
       await project.restoreInstallState();
 
-      const tree = await getTree(project, false, recursive, production, excludeMetadata);
+      const tree = await getTree(
+        project,
+        false,
+        recursive,
+        production,
+        excludeMetadata
+      );
 
       let stdout = "";
       const stdoutStream = new Writable({

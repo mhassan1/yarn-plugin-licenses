@@ -69,7 +69,7 @@ export class LicensesListCommand extends Command<CommandContext> {
       this.json,
       this.recursive,
       this.production,
-      this.excludeMetadata,
+      this.excludeMetadata
     );
 
     treeUtils.emitTree(tree, {
