@@ -21,6 +21,10 @@ export class LicensesListCommand extends Command<CommandContext> {
   @Command.Boolean(`--json`)
   json: boolean = false;
 
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
+  @Command.Boolean(`--exclude-metadata`)
+  excludeMetadata: boolean = false;
+
   static usage: Usage = Command.Usage({
     description: `display the licenses for all packages in the project`,
     details: `
@@ -64,7 +68,8 @@ export class LicensesListCommand extends Command<CommandContext> {
       project,
       this.json,
       this.recursive,
-      this.production
+      this.production,
+      this.excludeMetadata,
     );
 
     treeUtils.emitTree(tree, {

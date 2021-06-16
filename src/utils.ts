@@ -29,13 +29,15 @@ export const pluginRootDir: PortablePath =
  * @param {boolean} json - Whether to output as JSON
  * @param {boolean} recursive - Whether to compute licenses recursively
  * @param {boolean} production - Whether to exclude devDependencies
+ * @param {boolean} excludeMetadata - Whether to exclude metadata in tree
  * @returns {treeUtils.TreeNode} Root tree node
  */
 export const getTree = async (
   project: Project,
   json: boolean,
   recursive: boolean,
-  production: boolean
+  production: boolean,
+  excludeMetadata: boolean,
 ): Promise<treeUtils.TreeNode> => {
   const rootChildren: treeUtils.TreeMap = {};
   const root: treeUtils.TreeNode = { children: rootChildren };
@@ -78,40 +80,45 @@ export const getTree = async (
       locator,
       descriptor,
     });
-    const node: treeUtils.TreeNode = {
-      value: nodeValue,
-      children: {
+
+    const children = excludeMetadata
+      ? {}
+      : {
         ...(url
           ? {
-              url: {
-                value: formatUtils.tuple(
-                  formatUtils.Type.NO_HINT,
-                  stringifyKeyValue("URL", url, json)
-                ),
-              },
-            }
+            url: {
+              value: formatUtils.tuple(
+                formatUtils.Type.NO_HINT,
+                stringifyKeyValue("URL", url, json)
+              ),
+            },
+          }
           : {}),
         ...(vendorName
           ? {
-              vendorName: {
-                value: formatUtils.tuple(
-                  formatUtils.Type.NO_HINT,
-                  stringifyKeyValue("VendorName", vendorName, json)
-                ),
-              },
-            }
+            vendorName: {
+              value: formatUtils.tuple(
+                formatUtils.Type.NO_HINT,
+                stringifyKeyValue("VendorName", vendorName, json)
+              ),
+            },
+          }
           : {}),
         ...(vendorUrl
           ? {
-              vendorUrl: {
-                value: formatUtils.tuple(
-                  formatUtils.Type.NO_HINT,
-                  stringifyKeyValue("VendorUrl", vendorUrl, json)
-                ),
-              },
-            }
+            vendorUrl: {
+              value: formatUtils.tuple(
+                formatUtils.Type.NO_HINT,
+                stringifyKeyValue("VendorUrl", vendorUrl, json)
+              ),
+            },
+          }
           : {}),
-      },
+      }
+
+    const node: treeUtils.TreeNode = {
+      value: nodeValue,
+      children
     };
 
     const key = structUtils.stringifyLocator(locator);
