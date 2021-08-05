@@ -1,16 +1,18 @@
 import { WorkspaceRequiredError } from "@yarnpkg/cli";
 import { CommandContext, Configuration, Project } from "@yarnpkg/core";
-import { Command, Usage } from "clipanion";
+import { Command, Usage, Option } from "clipanion";
 import { getDisclaimer } from "../utils";
 
 export class LicensesGenerateDisclaimerCommand extends Command<CommandContext> {
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  @Command.Boolean(`-R,--recursive`)
-  recursive: boolean = false;
+  static paths = [[`licenses`, `generate-disclaimer`]];
 
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  @Command.Boolean(`--production`)
-  production: boolean = false;
+  recursive = Option.Boolean(`-R,--recursive`, false, {
+    description: `Include transitive dependencies (dependencies of direct dependencies)`,
+  });
+
+  production = Option.Boolean(`--production`, false, {
+    description: `Exclude development dependencies`,
+  });
 
   static usage: Usage = Command.Usage({
     description: `display the license disclaimer including all packages in the project`,
@@ -37,7 +39,6 @@ export class LicensesGenerateDisclaimerCommand extends Command<CommandContext> {
     ],
   });
 
-  @Command.Path(`licenses`, `generate-disclaimer`)
   async execute(): Promise<void> {
     const configuration = await Configuration.find(
       this.context.cwd,

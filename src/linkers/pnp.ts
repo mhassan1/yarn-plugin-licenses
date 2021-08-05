@@ -36,7 +36,7 @@ export const getPackagePath = async (
 let pnpApi: any;
 
 /**
- * Cache PnP API from `.pnp.js` (or similar), if it has not already been cached
+ * Cache PnP API from `.pnp.cjs` (or similar), if it has not already been cached
  *
  * @param {Project} project - Yarn project
  * @returns {void}
@@ -44,7 +44,7 @@ let pnpApi: any;
 const makePnPApi = (project: Project) => {
   if (!pnpApi) {
     // use `eval` so webpack leaves this alone
-    pnpApi = eval("module.require")(getPnpPath(project).main);
+    pnpApi = eval("module.require")(getPnpPath(project).cjs);
   }
 };
 

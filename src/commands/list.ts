@@ -5,25 +5,27 @@ import {
   Project,
   treeUtils,
 } from "@yarnpkg/core";
-import { Command, Usage } from "clipanion";
+import { Command, Usage, Option } from "clipanion";
 import { getTree } from "../utils";
 
 export class LicensesListCommand extends Command<CommandContext> {
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  @Command.Boolean(`-R,--recursive`)
-  recursive: boolean = false;
+  static paths = [[`licenses`, `list`]];
 
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  @Command.Boolean(`--production`)
-  production: boolean = false;
+  recursive = Option.Boolean(`-R,--recursive`, false, {
+    description: `Include transitive dependencies (dependencies of direct dependencies)`,
+  });
 
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  @Command.Boolean(`--json`)
-  json: boolean = false;
+  production = Option.Boolean(`--production`, false, {
+    description: `Exclude development dependencies`,
+  });
 
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  @Command.Boolean(`--exclude-metadata`)
-  excludeMetadata: boolean = false;
+  json = Option.Boolean(`--json`, false, {
+    description: `Format output as JSON`,
+  });
+
+  excludeMetadata = Option.Boolean(`--exclude-metadata`, false, {
+    description: `Exclude dependency metadata from output`,
+  });
 
   static usage: Usage = Command.Usage({
     description: `display the licenses for all packages in the project`,
@@ -47,7 +49,6 @@ export class LicensesListCommand extends Command<CommandContext> {
     ],
   });
 
-  @Command.Path(`licenses`, `list`)
   async execute(): Promise<void> {
     const configuration = await Configuration.find(
       this.context.cwd,
