@@ -3,12 +3,11 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:jsdoc/recommended',
+    'plugin:@typescript-eslint/eslint-recommended'
   ],
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  plugins: [
-    'jsdoc'
-  ],
+  plugins: ['jsdoc', '@typescript-eslint/eslint-plugin']
 }

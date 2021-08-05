@@ -3,6 +3,7 @@
 ## [0.7.0] - 2021-08-05
 [0.7.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.6.0...v0.7.0
 
+- Improve linting and formatting
 - BREAKING: Upgrade to Yarn 3
 
 ## [0.6.0] - 2021-06-16

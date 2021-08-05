@@ -1,103 +1,101 @@
-import { getLicenseInfoFromManifest } from "../../utils";
+import { getLicenseInfoFromManifest } from '../../utils'
 
-describe("getLicenseInfoFromManifest", () => {
+describe('getLicenseInfoFromManifest', () => {
   const baseManifest = {
-    name: "my-package",
-    repository: { url: "my-repo" },
-    homepage: "my-homepage",
-    author: { name: "my-name", url: "my-url" },
-  };
+    name: 'my-package',
+    repository: { url: 'my-repo' },
+    homepage: 'my-homepage',
+    author: { name: 'my-name', url: 'my-url' }
+  }
 
   const baseExpectedManifest = {
-    license: "UNKNOWN",
-    url: "my-repo",
-    vendorName: "my-name",
-    vendorUrl: "my-homepage",
-  };
+    license: 'UNKNOWN',
+    url: 'my-repo',
+    vendorName: 'my-name',
+    vendorUrl: 'my-homepage'
+  }
 
-  it("should read license information from a manifest", () => {
-    expect(getLicenseInfoFromManifest(baseManifest)).toStrictEqual(
-      baseExpectedManifest
-    );
+  it('should read license information from a manifest', () => {
+    expect(getLicenseInfoFromManifest(baseManifest)).toStrictEqual(baseExpectedManifest)
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        homepage: undefined,
+        homepage: undefined
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      vendorUrl: "my-url",
-    });
+      vendorUrl: 'my-url'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        repository: undefined,
+        repository: undefined
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      url: "my-homepage",
-    });
+      url: 'my-homepage'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        license: "MIT",
+        license: 'MIT'
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      license: "MIT",
-    });
+      license: 'MIT'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        license: { type: "MIT" },
+        license: { type: 'MIT' }
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      license: "MIT",
-    });
+      license: 'MIT'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        licenses: ["MIT"],
+        licenses: ['MIT']
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      license: "MIT",
-    });
+      license: 'MIT'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        licenses: [{ type: "MIT" }],
+        licenses: [{ type: 'MIT' }]
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      license: "MIT",
-    });
+      license: 'MIT'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        licenses: ["MIT", "WTFPL"],
+        licenses: ['MIT', 'WTFPL']
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      license: "(MIT OR WTFPL)",
-    });
+      license: '(MIT OR WTFPL)'
+    })
 
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
-        licenses: [{ type: "MIT" }, { type: "WTFPL" }],
+        licenses: [{ type: 'MIT' }, { type: 'WTFPL' }]
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      license: "(MIT OR WTFPL)",
-    });
-  });
-});
+      license: '(MIT OR WTFPL)'
+    })
+  })
+})

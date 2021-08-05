@@ -1,0 +1,10 @@
+build
+**/*.json
+**/*.yml
+**/*.md
+
+bundles/**
+
+# Ignore yarn artifacts
+.yarn/
+.pnp.*

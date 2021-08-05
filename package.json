@@ -25,8 +25,11 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "builder build plugin",
+    "prettier-check": "prettier --check .",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint --ext .ts .",
+    "lint": "yarn ts-check && yarn eslint && yarn prettier-check",
+    "eslint": "eslint --ext .ts .",
+    "ts-check": "tsc --noEmit --skipLibCheck",
     "prepare": "yarn build",
     "preversion": "yarn lint",
     "version": "yarn format && yarn build && sed -Ei '' \"s/(yarn-plugin-licenses\\/).+(\\/bundles)/\\1v$npm_package_version\\2/g\" README.md && git add -A",
