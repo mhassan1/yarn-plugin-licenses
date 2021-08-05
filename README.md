@@ -1,6 +1,8 @@
 # `yarn-plugin-licenses`
 
-This is a Yarn v2 plugin that adds `yarn licenses` commands (similar to what Yarn v1 had).
+This is a Yarn v3 plugin that adds `yarn licenses` commands (similar to what Yarn v1 had).
+
+For Yarn v2 support, install [v0.6.0](https://github.com/mhassan1/yarn-plugin-licenses/tree/v0.6.0) or earlier.
 
 ## Install
 

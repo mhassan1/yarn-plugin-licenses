@@ -1,7 +1,7 @@
-import { Project, Package } from "@yarnpkg/core";
-import * as pnp from "./pnp";
-import * as nodeModules from "./node-modules";
-import { PortablePath, FakeFS } from "@yarnpkg/fslib";
+import { Project, Package } from '@yarnpkg/core'
+import * as pnp from './pnp'
+import * as nodeModules from './node-modules'
+import { PortablePath, FakeFS } from '@yarnpkg/fslib'
 
 /* istanbul ignore next */
 /**
@@ -12,19 +12,16 @@ import { PortablePath, FakeFS } from "@yarnpkg/fslib";
  */
 export const resolveLinker = (nodeLinker: string): Linker => {
   switch (nodeLinker) {
-    case "pnp":
-      return pnp;
-    case "node-modules":
-      return nodeModules;
+    case 'pnp':
+      return pnp
+    case 'node-modules':
+      return nodeModules
     default:
-      throw new Error("Unsupported linker");
+      throw new Error('Unsupported linker')
   }
-};
+}
 
 type Linker = {
-  getPackagePath: (
-    project: Project,
-    pkg: Package
-  ) => Promise<PortablePath | null>;
-  fs: FakeFS<PortablePath>;
-};
+  getPackagePath: (project: Project, pkg: Package) => Promise<PortablePath | null>
+  fs: FakeFS<PortablePath>
+}
