@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.1] - 2021-08-09
+[0.7.1]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.7.0...v0.7.1
+
+- Remove `eval` from `pnp` linker
+
 ## [0.7.0] - 2021-08-05
 [0.7.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.6.0...v0.7.0
 
