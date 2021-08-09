@@ -40,8 +40,8 @@ let pnpApi: any
  */
 const makePnPApi = (project: Project) => {
   if (!pnpApi) {
-    // use `eval` so webpack leaves this alone
-    pnpApi = eval('module.require')(getPnpPath(project).cjs)
+    // use `module.require` so webpack leaves this alone
+    pnpApi = module.require(getPnpPath(project).cjs)
   }
 }
 
