@@ -97,5 +97,25 @@ describe('getLicenseInfoFromManifest', () => {
       ...baseExpectedManifest,
       license: '(MIT OR WTFPL)'
     })
+
+    expect(
+      getLicenseInfoFromManifest({
+        ...baseManifest,
+        licenses: 'MIT'
+      })
+    ).toStrictEqual({
+      ...baseExpectedManifest,
+      license: 'MIT'
+    })
+
+    expect(
+      getLicenseInfoFromManifest({
+        ...baseManifest,
+        licenses: { type: 'MIT' }
+      })
+    ).toStrictEqual({
+      ...baseExpectedManifest,
+      license: 'MIT'
+    })
   })
 })
