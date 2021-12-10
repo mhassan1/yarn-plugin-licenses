@@ -189,9 +189,13 @@ export const getLicenseInfoFromManifest = (manifest: ManifestWithLicenseInfo): L
       return normalizeManifestLicenseValue(license)
     }
     if (licenses) {
+      if (!Array.isArray(licenses)) {
+        return normalizeManifestLicenseValue(licenses)
+      }
       if (licenses.length === 1) {
         return normalizeManifestLicenseValue(licenses[0])
-      } else if (licenses.length) {
+      }
+      if (licenses.length > 1) {
         return `(${licenses.map(normalizeManifestLicenseValue).join(' OR ')})`
       }
     }
@@ -209,7 +213,7 @@ export const getLicenseInfoFromManifest = (manifest: ManifestWithLicenseInfo): L
 type ManifestWithLicenseInfo = {
   name: string
   license?: ManifestLicenseValue
-  licenses?: ManifestLicenseValue[]
+  licenses?: ManifestLicenseValue | ManifestLicenseValue[]
   repository?: { url: string }
   homepage?: string
   author?: { name: string; url: string }

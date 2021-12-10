@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.2] - 2021-12-09
+[0.7.2]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.7.1...v0.7.2
+
+- Handle strings and objects in `licenses` property
+
 ## [0.7.1] - 2021-08-09
 [0.7.1]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.7.0...v0.7.1
 
