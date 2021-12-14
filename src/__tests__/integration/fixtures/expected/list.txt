@@ -1,7 +1,7 @@
 ├─ MIT
-│  ├─ axios@npm:0.20.0 (via npm:^0.20.0)
+│  ├─ axios@npm:0.24.0 (via npm:^0.24.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
-│  │  └─ VendorUrl: https://github.com/axios/axios
+│  │  └─ VendorUrl: https://axios-http.com
 │  ├─ dicer@npm:0.3.0 (via npm:^0.3.0)
 │  │  └─ URL: http://github.com/mscdex/dicer.git
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)

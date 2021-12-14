@@ -1,7 +1,7 @@
 ├─ MIT
-│  ├─ axios@npm:0.20.0 (via npm:^0.20.0)
+│  ├─ axios@npm:0.24.0 (via npm:^0.24.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
-│  │  └─ VendorUrl: https://github.com/axios/axios
+│  │  └─ VendorUrl: https://axios-http.com
 │  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
 │  │  └─ VendorUrl: https://github.com/watson/is-ci
