@@ -3,9 +3,8 @@ node_js:
   - lts/*
   - node
 os: linux
+dist: focal
 arch: arm64
-env:
-  - YARN_GPG=no
 cache:
   directories:
     - .yarn/cache
