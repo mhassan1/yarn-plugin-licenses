@@ -14,6 +14,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"caseless@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "caseless@npm:0.12.0"
+  checksum: b43bd4c440aa1e8ee6baefee8063b4850fd0d7b378f6aabc796c9ec8cb26d27fb30b46885350777d9bd079c5256c0e1329ad0dc7c2817e0bb466810ebb353751
+  languageName: node
+  linkType: hard
+
 "ci-info@npm:^1.5.0":
   version: 1.6.0
   resolution: "ci-info@npm:1.6.0"
@@ -38,12 +45,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.14.4":
-  version: 1.14.6
-  resolution: "follow-redirects@npm:1.14.6"
+  version: 1.14.8
+  resolution: "follow-redirects@npm:1.14.8"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 7fcdb089a733d2aa39041880790e9f772df009fcd0b243fee7e10acf0e14a8dab5208cf79eb1de35b9cc6033d4dde7f95becadfaa360c50d460b4c730b375e80
+  checksum: 40c67899c2e3149a27e8b6498a338ff27f39fe138fde8d7f0756cb44b073ba0bfec3d52af28f20c5bdd67263d564d0d8d7b5efefd431de95c18c42f7b4aef457
   languageName: node
   linkType: hard
 
@@ -101,13 +108,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"realms-shim@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "realms-shim@npm:1.2.2"
-  checksum: df714fe3d35e6bab3e12700fd8eb9d11d6b068d4545e3bfefb5176f4cdafc8f55dd3e7fd9bde6bec1f947c41aff79fa091d38cce4c7b8ca0d4fb385659ee7f7a
-  languageName: node
-  linkType: hard
-
 "streamsearch@npm:0.1.2":
   version: 0.1.2
   resolution: "streamsearch@npm:0.1.2"
@@ -120,9 +120,9 @@ __metadata:
   resolution: "test-package@workspace:."
   dependencies:
     axios: ^0.24.0
+    caseless: ^0.12.0
     dicer: ^0.3.0
     is-ci: ^1.0.0
     is-promise: ^4.0.0
-    realms-shim: ^1.2.2
   languageName: unknown
   linkType: soft
