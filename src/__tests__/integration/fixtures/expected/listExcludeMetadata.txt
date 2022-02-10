@@ -7,9 +7,9 @@
 │  ├─ is-promise@npm:3.0.0 (via npm:^3.0.0)
 │  └─ is-promise@npm:4.0.0 (via npm:^4.0.0)
 │
-├─ UNKNOWN
-│  ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-│  └─ test-package@workspace:. (via workspace:.)
+├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
 │
-└─ Apache-2.0
-   └─ realms-shim@npm:1.2.2 (via npm:^1.2.2)
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ test-package@workspace:. (via workspace:.)
