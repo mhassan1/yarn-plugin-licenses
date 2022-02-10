@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/mhassan1/yarn-plugin-licenses#readme",
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest",
     "build": "builder build plugin",
     "prettier-check": "prettier --check .",
     "format": "prettier --write \"src/**/*.ts\"",
