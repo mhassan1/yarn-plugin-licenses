@@ -1,37 +1,49 @@
 ├─ MIT
 │  ├─ axios@npm:0.24.0 (via npm:^0.24.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
+│  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
 │  ├─ ci-info@npm:1.6.0 (via npm:^1.5.0)
 │  │  ├─ URL: https://github.com/watson/ci-info.git
+│  │  ├─ VendorName: Thomas Watson Steen
 │  │  └─ VendorUrl: https://github.com/watson/ci-info
 │  ├─ ci-info@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/ci-info.git
+│  │  ├─ VendorName: Thomas Watson Steen
 │  │  └─ VendorUrl: https://github.com/watson/ci-info
 │  ├─ dicer@npm:0.3.0 (via npm:^0.3.0)
-│  │  └─ URL: http://github.com/mscdex/dicer.git
+│  │  ├─ URL: http://github.com/mscdex/dicer.git
+│  │  └─ VendorName: Brian White
 │  ├─ follow-redirects@npm:1.14.8 [39e5c] (via npm:^1.14.4 [39e5c])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
+│  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
+│  │  ├─ VendorName: Thomas Watson Steen
 │  │  └─ VendorUrl: https://github.com/watson/is-ci
 │  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
+│  │  ├─ VendorName: Thomas Watson Steen
 │  │  └─ VendorUrl: https://github.com/watson/is-ci
 │  ├─ is-function@npm:1.0.2 (via npm:^1.0.2)
 │  │  ├─ URL: git://github.com/grncdr/js-is-function.git
+│  │  ├─ VendorName: Stephen Sugden
 │  │  └─ VendorUrl: https://github.com/grncdr/js-is-function
 │  ├─ is-promise@npm:3.0.0 (via npm:^3.0.0)
-│  │  └─ URL: https://github.com/then/is-promise.git
+│  │  ├─ URL: https://github.com/then/is-promise.git
+│  │  └─ VendorName: ForbesLindesay
 │  ├─ is-promise@npm:4.0.0 (via npm:^4.0.0)
-│  │  └─ URL: https://github.com/then/is-promise.git
+│  │  ├─ URL: https://github.com/then/is-promise.git
+│  │  └─ VendorName: ForbesLindesay
 │  └─ streamsearch@npm:0.1.2 (via npm:0.1.2)
-│     └─ URL: http://github.com/mscdex/streamsearch.git
+│     ├─ URL: http://github.com/mscdex/streamsearch.git
+│     └─ VendorName: Brian White
 │
 ├─ Apache-2.0
 │  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
-│     └─ URL: https://github.com/mikeal/caseless
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
 │
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
