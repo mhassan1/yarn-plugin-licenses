@@ -175,6 +175,38 @@ export const getSortedPackages = async (
   return packages
 }
 
+type Author = { name?: string; email?: string; url?: string }
+
+/**
+ * Get author information from a manifest's author string
+ *
+ * @param {string} author - format: "name (url) <email>"
+ * @returns {Author} parsed author information
+ */
+export function parseAuthor(author: string) {
+  const result: Author = {}
+
+  const nameMatch = author.match(/^([^(<]+)/)
+  if (nameMatch) {
+    const name = nameMatch[0].trim()
+    if (name) {
+      result.name = name
+    }
+  }
+
+  const emailMatch = author.match(/<([^>]+)>/)
+  if (emailMatch) {
+    result.email = emailMatch[1]
+  }
+
+  const urlMatch = author.match(/\(([^)]+)\)/)
+  if (urlMatch) {
+    result.url = urlMatch[1]
+  }
+
+  return result
+}
+
 /**
  * Get license information from a manifest
  *
@@ -183,6 +215,8 @@ export const getSortedPackages = async (
  */
 export const getLicenseInfoFromManifest = (manifest: ManifestWithLicenseInfo): LicenseInfo => {
   const { license, licenses, repository, homepage, author } = manifest
+
+  const vendor = typeof author === 'string' ? parseAuthor(author) : author
 
   const getNormalizedLicense = () => {
     if (license) {
@@ -205,8 +239,8 @@ export const getLicenseInfoFromManifest = (manifest: ManifestWithLicenseInfo): L
   return {
     license: getNormalizedLicense(),
     url: repository?.url || homepage,
-    vendorName: author?.name,
-    vendorUrl: homepage || author?.url
+    vendorName: vendor?.name,
+    vendorUrl: homepage || vendor?.url
   }
 }
 
