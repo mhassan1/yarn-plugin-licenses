@@ -105,6 +105,18 @@ describe.each(['pnp', 'node-modules'])('licenses list (%s)', (linker) => {
   })
 })
 
+describe('licenses list (node-modules with aliases)', () => {
+  const cwd = npath.join(__dirname, 'fixtures', `test-package-node-modules-aliases`)
+  beforeAll(() => {
+    execSync('yarn', { cwd })
+  })
+
+  it('should include aliases in licenses list', () => {
+    const stdout = execSync('yarn licenses list', { cwd }).toString()
+    expect(stdout).toContain('babel-loader@npm:8.2.4 [dc3fc] (via npm:^8.2.4 [dc3fc])')
+  })
+})
+
 describe('getTree', () => {
   it.each([
     ['non-recursively', false, false, false, expectedNonRecursive],
