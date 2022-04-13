@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@storybook/addon-docs": "^6.4.21",
+    "babel-loader": "^8.2.4"
+  }
+}

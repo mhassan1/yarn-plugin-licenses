@@ -13,15 +13,23 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
   await makeYarnState(project)
 
   const locator = structUtils.convertPackageToLocator(pkg)
-  const entry = yarnState[structUtils.stringifyLocator(locator)]
+  const stringifiedLocator = structUtils.stringifyLocator(locator)
+  const entry = yarnState[stringifiedLocator] || yarnStateAliases[stringifiedLocator]
   if (!entry) return null
 
   const location = entry.locations[0]
   return location ? ppath.join(project.cwd, location) : project.cwd
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let yarnState: any
+type YarnState = Record<string, YarnStateEntry>
+
+type YarnStateEntry = {
+  locations: PortablePath[]
+  aliases?: string[]
+}
+
+let yarnState: YarnState
+let yarnStateAliases: YarnState
 
 /**
  * Cache Yarn state from `yarn-state.yml`, if it has not already been cached
@@ -37,6 +45,7 @@ const makeYarnState = async (project: Project): Promise<void> => {
       '.yarn-state.yml' as Filename
     )
     yarnState = parseSyml(await xfs.readFilePromise(portablePath, 'utf8'))
+    yarnStateAliases = _getYarnStateAliases(yarnState)
   }
 }
 
@@ -44,3 +53,23 @@ const makeYarnState = async (project: Project): Promise<void> => {
  * Expose the virtual file system for reading package files
  */
 export const fs = xfs
+
+/**
+ * Get Yarn State for aliases from raw Yarn State
+ *
+ * @param {YarnState} yarnState Raw Yarn State
+ * @returns {YarnState} Yarn State for aliases
+ * @private
+ */
+export const _getYarnStateAliases = (yarnState: YarnState): YarnState => {
+  return Object.entries(yarnState).reduce((acc, [stringifiedLocator, yarnStateValue]) => {
+    if (!yarnStateValue.aliases) return acc
+    const locator = structUtils.parseLocator(stringifiedLocator)
+    for (const reference of yarnStateValue.aliases) {
+      const newLocator = structUtils.makeLocator(locator, reference)
+      const newStringifiedLocator = structUtils.stringifyLocator(newLocator)
+      acc[newStringifiedLocator] = yarnStateValue
+    }
+    return acc
+  }, {} as YarnState)
+}
