@@ -1,6 +1,6 @@
 ├─ MIT
 │  ├─ axios@npm:0.24.0 (via npm:^0.24.0)
-│  ├─ dicer@npm:0.3.0 (via npm:^0.3.0)
+│  ├─ has@npm:1.0.3 (via npm:^1.0.3)
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
 │  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
 │  ├─ is-function@npm:1.0.2 (via npm:^1.0.2)

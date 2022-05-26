@@ -3,9 +3,10 @@
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
-│  ├─ dicer@npm:0.3.0 (via npm:^0.3.0)
-│  │  ├─ URL: http://github.com/mscdex/dicer.git
-│  │  └─ VendorName: Brian White
+│  ├─ has@npm:1.0.3 (via npm:^1.0.3)
+│  │  ├─ URL: git://github.com/tarruda/has.git
+│  │  ├─ VendorName: Thiago de Arruda
+│  │  └─ VendorUrl: https://github.com/tarruda/has
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
 │  │  ├─ VendorName: Thomas Watson Steen

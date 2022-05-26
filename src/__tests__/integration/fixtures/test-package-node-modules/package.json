@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "axios": "^0.24.0",
-    "dicer": "^0.3.0",
+    "has": "^1.0.3",
     "is-ci": "^1.0.0",
     "is-promise": "^4.0.0"
   }
