@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@storybook/addon-docs": "^6.4.21",
+    "@storybook/addon-docs": "^6.5.13",
     "babel-loader": "^8.2.4"
   },
   "resolutions": {
