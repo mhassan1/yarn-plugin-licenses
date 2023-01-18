@@ -125,22 +125,24 @@ export class LicensesHtmlCommand extends Command<CommandContext> {
     const seen = new Set<string>()
 
     for (const descriptor of sortedDescriptors.values()) {
-      const identHash = project.storedResolutions.get(descriptor.descriptorHash)!
-      const pkg = project.storedPackages.get(identHash)!
-      const locator = structUtils.convertPackageToLocator(pkg)
+      if (seen.has(descriptor.identHash)) continue
 
-      const packagePath = await linker.getPackagePath(project, pkg)
-      if (packagePath === null) continue
-
-      const packageManifest = JSON.parse(
-        await linker.fs.readFilePromise(ppath.join(packagePath, Filename.manifest), 'utf8')
-      )
-      if (!packageManifest) continue
-      if (seen.has(packageManifest.name)) continue
-
-      const { license, url, vendorName, vendorUrl } = getLicenseInfoFromManifest(packageManifest)
 
       try {
+        const identHash = project.storedResolutions.get(descriptor.descriptorHash)!
+        const pkg = project.storedPackages.get(identHash)!
+        const locator = structUtils.convertPackageToLocator(pkg)
+
+        const packagePath = await linker.getPackagePath(project, pkg)
+        if (packagePath === null) continue
+
+        const packageManifest = JSON.parse(
+          await linker.fs.readFilePromise(ppath.join(packagePath, Filename.manifest), 'utf8')
+        )
+        if (!packageManifest) continue
+
+        const { license, url, vendorName, vendorUrl } = getLicenseInfoFromManifest(packageManifest)
+
         const licenseContents = linker.getLicense(project, pkg)
         if(licenseContents) {
           html += entry(id++, packageManifest.name, vendorUrl || url, license, vendorName, licenseContents)
@@ -148,7 +150,7 @@ export class LicensesHtmlCommand extends Command<CommandContext> {
       } catch (e) {}
 
 
-      seen.add(packageManifest.name)
+      seen.add(descriptor.identHash)
     }
 
     html += footer

@@ -26,7 +26,7 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
   if (!packageInformation) return null
 
   const { packageLocation } = packageInformation
-  return packageLocation
+  return `/${packageLocation.slice(0, -1).replace(/\\/g, '/')}` as any
 }
 
 export const getLicense = (project: Project, pkg: Package) => {
