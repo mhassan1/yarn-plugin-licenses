@@ -1,6 +1,7 @@
-import { Project, Package, structUtils } from '@yarnpkg/core'
-import { parseSyml } from '@yarnpkg/parsers'
-import { xfs, ppath, PortablePath, Filename } from '@yarnpkg/fslib'
+import {Package, Project, structUtils} from '@yarnpkg/core'
+import {parseSyml} from '@yarnpkg/parsers'
+import {Filename, npath, PortablePath, ppath, xfs} from '@yarnpkg/fslib'
+import { readFileSync } from "fs";
 
 /**
  * Get package path with `node-modules` linker for a given Yarn project and package
@@ -33,15 +34,14 @@ export const getLicense = (project: Project, pkg: Package) => {
 
   const locator = structUtils.convertPackageToLocator(pkg);
   const entry = yarnState[structUtils.stringifyLocator(locator)];
-  if (!entry) return null;
+  if (!entry) return undefined;
 
   const location = entry.locations[0];
   const portablePath = location
       ? ppath.join(location, "LICENSE" as any)
       : "LICENSE" as any;
   const nativePath = npath.fromPortablePath(portablePath);
-  const license = readFileSync(nativePath).toString();
-  return license;
+  return readFileSync(nativePath).toString();
 };
 
 let yarnState: YarnState

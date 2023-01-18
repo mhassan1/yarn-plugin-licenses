@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 // this file is covered by CLI tests
 
-import { getPnpPath } from '@yarnpkg/plugin-pnp'
-import { Package, Project, structUtils } from '@yarnpkg/core'
-import { VirtualFS, ZipOpenFS, PortablePath, ppath } from '@yarnpkg/fslib'
-import { getLibzipSync } from '@yarnpkg/libzip'
+import {getPnpPath} from '@yarnpkg/plugin-pnp'
+import {Package, Project, structUtils} from '@yarnpkg/core'
+import {PortablePath, ppath, VirtualFS, ZipOpenFS} from '@yarnpkg/fslib'
+import {getLibzipSync} from '@yarnpkg/libzip'
 
 /**
  * Get package path with `pnp` linker for a given Yarn project and package
@@ -46,8 +46,7 @@ export const getLicense = (project: Project, pkg: Package) => {
     ('/' + packageLocation.slice(0, -1).replace(/\\/g, '/')) as any,
     'LICENSE' as any
   )
-  const license = fs.readFileSync(portablePath).toString()
-  return license
+  return fs.readFileSync(portablePath).toString()
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -62,7 +61,7 @@ let pnpApi: any
 const makePnPApi = (project: Project) => {
   if (!pnpApi) {
     // use `module.require` so webpack leaves this alone
-    pnpApi = module.require(getPnpPath(project).cjs)
+    pnpApi = module.require(getPnpPath(project).cjs.substr(1))
   }
 }
 
