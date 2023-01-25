@@ -1275,6 +1275,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hosted-git-info@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@types/hosted-git-info@npm:3.0.2"
+  checksum: b922a6f13c79d0388762a92e943d098cbc950be20754508de4946d3529ecab730e3be01ebdbe0a235b85ddcc3f7251d8df3073d98978d43018a76200b47e548d
+  languageName: node
+  linkType: hard
+
 "@types/http-cache-semantics@npm:*":
   version: 4.0.0
   resolution: "@types/http-cache-semantics@npm:4.0.0"
@@ -3941,6 +3948,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hosted-git-info@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "hosted-git-info@npm:6.1.1"
+  dependencies:
+    lru-cache: ^7.5.1
+  checksum: fcd3ca2eaa05f3201425ccbb8aa47f88cdda4a3a6d79453f8e269f7171356278bd1db08f059d8439eb5eaa91c6a8a20800fc49cca6e9e4e899b202a332d5ba6b
+  languageName: node
+  linkType: hard
+
 "html-escaper@npm:^2.0.0":
   version: 2.0.2
   resolution: "html-escaper@npm:2.0.2"
@@ -4981,6 +4997,13 @@ __metadata:
   dependencies:
     yallist: ^4.0.0
   checksum: f97f499f898f23e4585742138a22f22526254fdba6d75d41a1c2526b3b6cc5747ef59c5612ba7375f42aca4f8461950e925ba08c991ead0651b4918b7c978297
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^7.5.1":
+  version: 7.14.1
+  resolution: "lru-cache@npm:7.14.1"
+  checksum: d72c6713c6a6d86836a7a6523b3f1ac6764768cca47ec99341c3e76db06aacd4764620e5e2cda719a36848785a52a70e531822dc2b33fb071fa709683746c104
   languageName: node
   linkType: hard
 
@@ -6912,6 +6935,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "yarn-plugin-licenses@workspace:."
   dependencies:
+    "@types/hosted-git-info": ^3.0.2
     "@types/jest": ^29.2.4
     "@types/node": ^18.11.18
     "@typescript-eslint/eslint-plugin": ^5.11.0
@@ -6928,6 +6952,7 @@ __metadata:
     clipanion: ^3.1.0
     eslint: ^8.8.0
     eslint-plugin-jsdoc: ^39.6.4
+    hosted-git-info: ^6.1.1
     jest: ^29.3.1
     prettier: ^2.5.1
     ts-jest: ^29.0.3

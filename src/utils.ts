@@ -10,6 +10,7 @@ import {
   formatUtils
 } from '@yarnpkg/core'
 import { PortablePath, ppath, npath, Filename } from '@yarnpkg/fslib'
+import * as hostedGitInfo from 'hosted-git-info'
 import { resolveLinker } from './linkers'
 
 /**
@@ -281,8 +282,13 @@ type LicenseInfo = {
  */
 const normalizeManifestRepositoryUrl = (
   manifestRepositoryValue: ManifestWithLicenseInfo['repository']
-): string | undefined =>
-  typeof manifestRepositoryValue === 'string' ? manifestRepositoryValue : manifestRepositoryValue?.url
+): string | undefined => {
+  const rawRepositoryUrl =
+    typeof manifestRepositoryValue === 'string' ? manifestRepositoryValue : manifestRepositoryValue?.url
+  if (!rawRepositoryUrl) return rawRepositoryUrl
+  const hosted = hostedGitInfo.fromUrl(rawRepositoryUrl)
+  return !hosted || hosted.getDefaultRepresentation() !== 'shortcut' ? rawRepositoryUrl : hosted.https()
+}
 
 const stringifyKeyValue = (key: string, value: string, json: boolean) => {
   return json ? value : `${key}: ${value}`

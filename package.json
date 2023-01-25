@@ -43,9 +43,11 @@
     "@yarnpkg/libzip": "^2.2.2",
     "@yarnpkg/parsers": "^2.4.1",
     "@yarnpkg/plugin-pnp": "^3.1.1",
-    "clipanion": "^3.1.0"
+    "clipanion": "^3.1.0",
+    "hosted-git-info": "^6.1.1"
   },
   "devDependencies": {
+    "@types/hosted-git-info": "^3.0.2",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.11.0",

@@ -45,7 +45,7 @@ describe('getLicenseInfoFromManifest', () => {
       })
     ).toStrictEqual({
       ...baseExpectedManifest,
-      url: 'my/repository'
+      url: 'git+https://github.com/my/repository.git'
     })
 
     expect(
