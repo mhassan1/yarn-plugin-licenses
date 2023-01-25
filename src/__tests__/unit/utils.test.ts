@@ -31,6 +31,26 @@ describe('getLicenseInfoFromManifest', () => {
     expect(
       getLicenseInfoFromManifest({
         ...baseManifest,
+        repository: 'my-repository'
+      })
+    ).toStrictEqual({
+      ...baseExpectedManifest,
+      url: 'my-repository'
+    })
+
+    expect(
+      getLicenseInfoFromManifest({
+        ...baseManifest,
+        repository: 'my/repository'
+      })
+    ).toStrictEqual({
+      ...baseExpectedManifest,
+      url: 'my/repository'
+    })
+
+    expect(
+      getLicenseInfoFromManifest({
+        ...baseManifest,
         repository: undefined
       })
     ).toStrictEqual({

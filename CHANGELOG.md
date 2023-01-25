@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.9.0] - 2023-01-25
+[0.9.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.8.1...v0.9.0
+
+- Add support for `repository` strings
+
 ## [0.8.1] - 2022-04-13
 [0.8.1]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.8.0...v0.8.1
 

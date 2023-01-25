@@ -238,7 +238,7 @@ export const getLicenseInfoFromManifest = (manifest: ManifestWithLicenseInfo): L
 
   return {
     license: getNormalizedLicense(),
-    url: repository?.url || homepage,
+    url: normalizeManifestRepositoryUrl(repository) || homepage,
     vendorName: vendor?.name,
     vendorUrl: homepage || vendor?.url
   }
@@ -248,7 +248,7 @@ type ManifestWithLicenseInfo = {
   name: string
   license?: ManifestLicenseValue
   licenses?: ManifestLicenseValue | ManifestLicenseValue[]
-  repository?: { url: string }
+  repository?: { url: string } | string
   homepage?: string
   author?: { name: string; url: string }
 }
@@ -272,6 +272,17 @@ type LicenseInfo = {
   vendorName?: string
   vendorUrl?: string
 }
+
+/**
+ * Normalize a manifest repository value into a repository URL, if found
+ *
+ * @param {ManifestWithLicenseInfo['repository']} manifestRepositoryValue - Manifest repository value
+ * @returns {string|undefined} Repository URL, if found
+ */
+const normalizeManifestRepositoryUrl = (
+  manifestRepositoryValue: ManifestWithLicenseInfo['repository']
+): string | undefined =>
+  typeof manifestRepositoryValue === 'string' ? manifestRepositoryValue : manifestRepositoryValue?.url
 
 const stringifyKeyValue = (key: string, value: string, json: boolean) => {
   return json ? value : `${key}: ${value}`
@@ -349,8 +360,9 @@ export const getDisclaimer = async (project: Project, recursive: boolean, produc
     const urls = []
     for (const { name, repository } of packageMap.values()) {
       names.push(name)
-      if (repository?.url) {
-        urls.push(packageMap.size === 1 ? repository.url : `${repository.url} (${name})`)
+      const repositoryUrl = normalizeManifestRepositoryUrl(repository)
+      if (repositoryUrl) {
+        urls.push(packageMap.size === 1 ? repositoryUrl : `${repositoryUrl} (${name})`)
       }
     }
 
