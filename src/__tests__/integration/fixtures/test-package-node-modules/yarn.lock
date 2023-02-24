@@ -5,6 +5,13 @@ __metadata:
   version: 5
   cacheKey: 8
 
+"@esbuild/android-arm@npm:^0.17.10":
+  version: 0.17.10
+  resolution: "@esbuild/android-arm@npm:0.17.10"
+  conditions: os=android & cpu=arm
+  languageName: node
+  linkType: hard
+
 "axios@npm:^0.24.0":
   version: 0.24.0
   resolution: "axios@npm:0.24.0"
@@ -119,10 +126,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "test-package@workspace:."
   dependencies:
+    "@esbuild/android-arm": ^0.17.10
     axios: ^0.24.0
     caseless: ^0.12.0
     has: ^1.0.3
     is-ci: ^1.0.0
     is-promise: ^4.0.0
+  dependenciesMeta:
+    "@esbuild/android-arm":
+      optional: true
   languageName: unknown
   linkType: soft
