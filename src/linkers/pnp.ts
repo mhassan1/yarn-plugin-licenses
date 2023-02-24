@@ -5,6 +5,7 @@ import { getPnpPath } from '@yarnpkg/plugin-pnp'
 import { Package, Project, structUtils } from '@yarnpkg/core'
 import { VirtualFS, ZipOpenFS, PortablePath } from '@yarnpkg/fslib'
 import { getLibzipSync } from '@yarnpkg/libzip'
+import { getArchitectureSet } from './utils'
 
 /**
  * Get package path with `pnp` linker for a given Yarn project and package
@@ -15,6 +16,8 @@ import { getLibzipSync } from '@yarnpkg/libzip'
  */
 export const getPackagePath = async (project: Project, pkg: Package): Promise<PortablePath | null> => {
   makePnPApi(project)
+
+  if (!structUtils.isPackageCompatible(pkg, getArchitectureSet())) return null
 
   const locator = structUtils.convertPackageToLocator(pkg)
   const pnpLocator = {

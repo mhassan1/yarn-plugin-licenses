@@ -1,6 +1,7 @@
 import { Project, Package, structUtils } from '@yarnpkg/core'
 import { parseSyml } from '@yarnpkg/parsers'
 import { xfs, ppath, PortablePath, Filename } from '@yarnpkg/fslib'
+import { getArchitectureSet } from './utils'
 
 /**
  * Get package path with `node-modules` linker for a given Yarn project and package
@@ -11,6 +12,8 @@ import { xfs, ppath, PortablePath, Filename } from '@yarnpkg/fslib'
  */
 export const getPackagePath = async (project: Project, pkg: Package): Promise<PortablePath | null> => {
   await makeYarnState(project)
+
+  if (!structUtils.isPackageCompatible(pkg, getArchitectureSet())) return null
 
   const locator = structUtils.convertPackageToLocator(pkg)
   const stringifiedLocator = structUtils.stringifyLocator(locator)
