@@ -53,7 +53,7 @@ const expectedExcludeMetadataJson = normalizeLineEndings(
   )
 )
 
-describe.each(['pnp', 'node-modules'])('licenses list (%s)', (linker) => {
+describe.each(['pnp', 'node-modules', 'pnpm'])('licenses list (%s)', (linker) => {
   const cwd = npath.join(__dirname, 'fixtures', `test-package-${linker}`)
   beforeAll(() => {
     execSync('yarn', { cwd })

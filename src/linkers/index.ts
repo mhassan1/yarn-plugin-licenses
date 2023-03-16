@@ -1,6 +1,7 @@
 import { Project, Package } from '@yarnpkg/core'
 import * as pnp from './pnp'
 import * as nodeModules from './node-modules'
+import * as pnpm from './pnpm'
 import { PortablePath, FakeFS } from '@yarnpkg/fslib'
 
 /* istanbul ignore next */
@@ -16,6 +17,8 @@ export const resolveLinker = (nodeLinker: string): Linker => {
       return pnp
     case 'node-modules':
       return nodeModules
+    case 'pnpm':
+      return pnpm
     default:
       throw new Error('Unsupported linker')
   }

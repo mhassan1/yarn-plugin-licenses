@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.11.0] - 2023-03-16
+[0.11.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.10.0...v0.11.0
+
+- Add `pnpm` linker
+
 ## [0.10.0] - 2023-02-24
 [0.10.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.9.0...v0.10.0
 
