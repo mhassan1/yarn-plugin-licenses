@@ -13,3 +13,4 @@ cache:
     - src/__tests__/integration/fixtures/test-package-node-modules/.yarn/cache
     - src/__tests__/integration/fixtures/test-package-node-modules-aliases/.yarn/cache
     - src/__tests__/integration/fixtures/test-package-pnp/.yarn/cache
+    - src/__tests__/integration/fixtures/test-package-pnpm/.yarn/cache

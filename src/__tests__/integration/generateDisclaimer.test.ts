@@ -34,7 +34,7 @@ const expectedRecursiveProduction = normalizeLineEndings(
   )
 )
 
-describe.each(['pnp', 'node-modules'])('licenses generate-disclaimer (%s)', (linker) => {
+describe.each(['pnp', 'node-modules', 'pnpm'])('licenses generate-disclaimer (%s)', (linker) => {
   const cwd = npath.join(__dirname, 'fixtures', `test-package-${linker}`)
   beforeAll(() => {
     execSync('yarn', { cwd })

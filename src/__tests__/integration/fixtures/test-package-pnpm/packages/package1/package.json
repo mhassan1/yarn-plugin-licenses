@@ -1,0 +1,11 @@
+{
+  "name": "package1",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "is-ci": "^2.0.0",
+    "is-promise": "^3.0.0"
+  },
+  "devDependencies": {
+    "is-function": "^1.0.2"
+  }
+}
