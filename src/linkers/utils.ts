@@ -1,6 +1,7 @@
 type ArchitectureSet = {
   os: string[] | null
   cpu: string[] | null
+  libc: string[] | null
 }
 
 /**
@@ -11,4 +12,4 @@ type ArchitectureSet = {
  *
  * @returns {ArchitectureSet} Architecture set
  */
-export const getArchitectureSet = (): ArchitectureSet => ({ os: [process.platform], cpu: [process.arch] })
+export const getArchitectureSet = (): ArchitectureSet => ({ os: [process.platform], cpu: [process.arch], libc: [] })

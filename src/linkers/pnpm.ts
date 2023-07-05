@@ -17,6 +17,7 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
 
   const locator = structUtils.convertPackageToLocator(pkg)
   const slugifiedLocator = structUtils.slugifyLocator(locator)
+  const stringifiedIdent = structUtils.stringifyIdent(locator)
 
   const workspace = project.tryWorkspaceByLocator(locator)
   if (workspace) return workspace.cwd
@@ -25,7 +26,9 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
     project.configuration.projectCwd as PortablePath,
     Filename.nodeModules,
     '.store' as PortablePath,
-    slugifiedLocator as PortablePath
+    slugifiedLocator as PortablePath,
+    Filename.nodeModules,
+    stringifiedIdent as PortablePath
   )
 }
 

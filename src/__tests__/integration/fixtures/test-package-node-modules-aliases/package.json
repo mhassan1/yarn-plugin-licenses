@@ -5,6 +5,7 @@
   },
   "resolutions": {
     "glob-parent": "^5.1.2",
+    "semver": "^7.5.3",
     "trim": "^0.0.3"
   }
 }
