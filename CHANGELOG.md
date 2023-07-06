@@ -5,7 +5,7 @@
 
 - Fix `pnpm` linker `node_modules` path
   - This is a breaking change for `yarn < 3.2.0` due to https://github.com/yarnpkg/berry/pull/3681
-- Drop support for `node < 16`
+- Bump dependencies
 
 ## [0.11.0] - 2023-03-16
 [0.11.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.10.0...v0.11.0
