@@ -105,8 +105,11 @@ export const getTree = async (
     }
 
     const key = structUtils.stringifyLocator(locator)
-    const licenseChildren = rootChildren[license].children as treeUtils.TreeMap
-    licenseChildren[key] = node
+    const rootChildrenLicenseNode = rootChildren[license]
+    if (rootChildrenLicenseNode) {
+      const licenseChildren = rootChildrenLicenseNode.children as treeUtils.TreeMap
+      licenseChildren[key] = node
+    }
   }
 
   return root
@@ -139,7 +142,7 @@ export const getSortedPackages = async (
   } else {
     storedDescriptors = project.workspaces.flatMap((workspace) => {
       const dependencies = [workspace.anchoredDescriptor]
-      for (const [identHash, dependency] of workspace.dependencies.entries()) {
+      for (const [identHash, dependency] of workspace.anchoredPackage.dependencies.entries()) {
         if (production && workspace.manifest.devDependencies.has(identHash)) {
           continue
         }

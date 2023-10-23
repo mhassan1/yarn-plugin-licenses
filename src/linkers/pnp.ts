@@ -3,8 +3,8 @@
 
 import { getPnpPath } from '@yarnpkg/plugin-pnp'
 import { Package, Project, structUtils } from '@yarnpkg/core'
-import { VirtualFS, ZipOpenFS, PortablePath } from '@yarnpkg/fslib'
-import { getLibzipSync } from '@yarnpkg/libzip'
+import { VirtualFS, PortablePath } from '@yarnpkg/fslib'
+import { getLibzipSync, ZipOpenFS } from '@yarnpkg/libzip'
 import { getArchitectureSet } from './utils'
 
 /**
