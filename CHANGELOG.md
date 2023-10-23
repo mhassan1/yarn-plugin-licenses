@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.13.0] - 2023-10-23
+[0.13.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.12.0...v0.13.0
+
+- BREAKING: Upgrade to Yarn 4
+
 ## [0.12.0] - 2023-07-05
 [0.12.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.11.0...v0.12.0
 
