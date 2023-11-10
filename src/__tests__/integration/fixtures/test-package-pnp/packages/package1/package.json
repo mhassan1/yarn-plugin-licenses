@@ -1,7 +1,7 @@
 {
   "name": "package1",
   "dependencies": {
-    "axios": "^0.24.0",
+    "axios": "^1.6.0",
     "is-ci": "^2.0.0",
     "is-promise": "^3.0.0"
   },
