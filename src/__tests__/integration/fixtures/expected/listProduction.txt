@@ -1,5 +1,5 @@
 ├─ MIT
-│  ├─ axios@npm:0.24.0 (via npm:^0.24.0)
+│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
