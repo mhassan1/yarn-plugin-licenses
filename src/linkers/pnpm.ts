@@ -2,7 +2,7 @@
 // this file is covered by CLI tests
 
 import { Project, Package, structUtils } from '@yarnpkg/core'
-import { xfs, ppath, PortablePath, Filename } from '@yarnpkg/fslib'
+import { xfs, ppath, PortablePath, Filename, XFS } from '@yarnpkg/fslib'
 import { getArchitectureSet } from './utils'
 
 /**
@@ -34,5 +34,7 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
 
 /**
  * Expose the virtual file system for reading package files
+ *
+ * @returns {XFS} Virtual file system
  */
-export const fs = xfs
+export const getFs = (): XFS => xfs

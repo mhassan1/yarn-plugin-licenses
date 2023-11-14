@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.13.1] - 2023-11-14
+[0.13.1]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.13.0...v0.13.1
+
+- Lazy-load `fs` in linkers
+
 ## [0.13.0] - 2023-10-23
 [0.13.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.12.0...v0.13.0
 

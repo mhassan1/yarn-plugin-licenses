@@ -1,6 +1,6 @@
 import { Project, Package, structUtils } from '@yarnpkg/core'
 import { parseSyml } from '@yarnpkg/parsers'
-import { xfs, ppath, PortablePath, Filename } from '@yarnpkg/fslib'
+import { xfs, ppath, PortablePath, Filename, XFS } from '@yarnpkg/fslib'
 import { getArchitectureSet } from './utils'
 
 /**
@@ -54,8 +54,10 @@ const makeYarnState = async (project: Project): Promise<void> => {
 
 /**
  * Expose the virtual file system for reading package files
+ *
+ * @returns {XFS} Virtual file system
  */
-export const fs = xfs
+export const getFs = (): XFS => xfs
 
 /**
  * Get Yarn State for aliases from raw Yarn State

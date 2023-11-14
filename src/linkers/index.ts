@@ -26,5 +26,5 @@ export const resolveLinker = (nodeLinker: string): Linker => {
 
 type Linker = {
   getPackagePath: (project: Project, pkg: Package) => Promise<PortablePath | null>
-  fs: FakeFS<PortablePath>
+  getFs: () => FakeFS<PortablePath>
 }

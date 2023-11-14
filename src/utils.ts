@@ -46,13 +46,14 @@ export const getTree = async (
   const sortedPackages = await getSortedPackages(project, recursive, production)
 
   const linker = resolveLinker(project.configuration.get('nodeLinker'))
+  const linkerFs = linker.getFs()
 
   for (const [descriptor, pkg] of sortedPackages.entries()) {
     const packagePath = await linker.getPackagePath(project, pkg)
     if (packagePath === null) continue
 
     const packageManifest: ManifestWithLicenseInfo = JSON.parse(
-      await linker.fs.readFilePromise(ppath.join(packagePath, Filename.manifest), 'utf8')
+      await linkerFs.readFilePromise(ppath.join(packagePath, Filename.manifest), 'utf8')
     )
 
     const { license, url, vendorName, vendorUrl } = getLicenseInfoFromManifest(packageManifest)
@@ -309,6 +310,7 @@ export const getDisclaimer = async (project: Project, recursive: boolean, produc
   const sortedPackages = await getSortedPackages(project, recursive, production)
 
   const linker = resolveLinker(project.configuration.get('nodeLinker'))
+  const linkerFs = linker.getFs()
 
   const manifestsByLicense: Map<string, Map<string, ManifestWithLicenseInfo>> = new Map()
 
@@ -317,10 +319,10 @@ export const getDisclaimer = async (project: Project, recursive: boolean, produc
     if (packagePath === null) continue
 
     const packageManifest: ManifestWithLicenseInfo = JSON.parse(
-      await linker.fs.readFilePromise(ppath.join(packagePath, Filename.manifest), 'utf8')
+      await linkerFs.readFilePromise(ppath.join(packagePath, Filename.manifest), 'utf8')
     )
 
-    const directoryEntries = await linker.fs.readdirPromise(packagePath, {
+    const directoryEntries = await linkerFs.readdirPromise(packagePath, {
       withFileTypes: true
     })
     const files = directoryEntries.filter((dirEnt) => dirEnt.isFile()).map(({ name }) => name)
@@ -334,7 +336,7 @@ export const getDisclaimer = async (project: Project, recursive: boolean, produc
 
     if (!licenseFilename) continue
 
-    const licenseText = await linker.fs.readFilePromise(ppath.join(packagePath, licenseFilename), 'utf8')
+    const licenseText = await linkerFs.readFilePromise(ppath.join(packagePath, licenseFilename), 'utf8')
 
     const noticeFilename = files.find((filename): boolean => {
       const lower = filename.toLowerCase()
@@ -343,7 +345,7 @@ export const getDisclaimer = async (project: Project, recursive: boolean, produc
 
     let noticeText
     if (noticeFilename) {
-      noticeText = await linker.fs.readFilePromise(ppath.join(packagePath, noticeFilename), 'utf8')
+      noticeText = await linkerFs.readFilePromise(ppath.join(packagePath, noticeFilename), 'utf8')
     }
 
     const licenseKey = noticeText ? `${licenseText}\n\nNOTICE\n\n${noticeText}` : licenseText

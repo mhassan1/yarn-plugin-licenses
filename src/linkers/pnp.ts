@@ -49,11 +49,29 @@ const makePnPApi = (project: Project) => {
 }
 
 /**
- * Instantiate the virtual file system for reading package files in PnP
+ * Get the virtual file system for reading package files in PnP
+ *
+ * @returns {VirtualFS} Virtual file system
  */
-export const fs = new VirtualFS({
-  baseFs: new ZipOpenFS({
-    libzip: getLibzipSync(),
-    readOnlyArchives: true
-  })
-})
+export const getFs = (): VirtualFS => {
+  makeFs()
+  return fs
+}
+
+let fs: VirtualFS
+
+/**
+ * Make the virtual file system for reading package files in PnP
+ *
+ * @returns {void}
+ */
+const makeFs = (): void => {
+  if (!fs) {
+    fs = new VirtualFS({
+      baseFs: new ZipOpenFS({
+        libzip: getLibzipSync(),
+        readOnlyArchives: true
+      })
+    })
+  }
+}
