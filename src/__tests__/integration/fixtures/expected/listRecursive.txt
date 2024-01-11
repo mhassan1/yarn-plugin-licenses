@@ -23,7 +23,7 @@
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.3 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.4 [ffaff] (via npm:^1.15.0 [ffaff])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
