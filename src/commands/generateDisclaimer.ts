@@ -26,7 +26,7 @@ export class LicensesGenerateDisclaimerCommand extends Command<CommandContext> {
     examples: [
       [`Include licenses of direct dependencies`, `$0 licenses generate-disclaimer`],
       [`Include licenses of direct and transitive dependencies`, `$0 licenses generate-disclaimer --recursive`],
-      [`Include licenses of production dependencies only`, `$0 licenses list --production`]
+      [`Include licenses of production dependencies only`, `$0 licenses generate-disclaimer --production`]
     ]
   })
 

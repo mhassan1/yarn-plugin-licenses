@@ -27,7 +27,7 @@ ${p}`:y,A=o.get(k);A?A.set(l.name,l):o.set(k,new Map([[l.name,l]]))}let a=`THE F
       If \`-R,--recursive\` is set, the disclaimer will include transitive dependencies (dependencies of direct dependencies).
 
       If \`--production\` is set, the disclaimer will exclude development dependencies.
-    `,examples:[["Include licenses of direct dependencies","$0 licenses generate-disclaimer"],["Include licenses of direct and transitive dependencies","$0 licenses generate-disclaimer --recursive"],["Include licenses of production dependencies only","$0 licenses list --production"]]});var Ce={commands:[q,G]},Me=Ce;return ce(Ue);})();
+    `,examples:[["Include licenses of direct dependencies","$0 licenses generate-disclaimer"],["Include licenses of direct and transitive dependencies","$0 licenses generate-disclaimer --recursive"],["Include licenses of production dependencies only","$0 licenses generate-disclaimer --production"]]});var Ce={commands:[q,G]},Me=Ce;return ce(Ue);})();
 return plugin;
 }
 };
