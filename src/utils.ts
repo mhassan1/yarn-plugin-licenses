@@ -1,5 +1,6 @@
 import {
   Project,
+  Manifest,
   Cache,
   ThrowReport,
   Descriptor,
@@ -178,6 +179,56 @@ export const getSortedPackages = async (
   }
 
   return packages
+}
+
+/* istanbul ignore next */
+/**
+ * Focus on the specified workspaces
+ *
+ * @param {Project} project - Yarn project
+ * @param {string[]} focus - Workspaces to focus on
+ * @param {boolean} recursive - Whether to get workspaces and packages recursively
+ * @param {boolean} production - Whether to exclude devDependencies
+ * @returns {Promise<void>}
+ */
+export const focusWorkspaces = async (
+  project: Project,
+  focus: string[],
+  recursive: boolean,
+  production: boolean
+): Promise<void> => {
+  if (!focus.length) return
+
+  // this is inspired by https://github.com/yarnpkg/berry/blob/cdb7f3c9/packages/plugin-workspace-tools/sources/commands/focus.ts#L38
+
+  const requiredWorkspaces = new Set(focus.map((name) => project.getWorkspaceByIdent(structUtils.parseIdent(name))))
+
+  if (recursive) {
+    for (const workspace of requiredWorkspaces) {
+      for (const dependencyType of production ? [`dependencies`] : Manifest.hardDependencies) {
+        for (const descriptor of workspace.manifest.getForScope(dependencyType).values()) {
+          const matchingWorkspace = project.tryWorkspaceByDescriptor(descriptor)
+          if (matchingWorkspace === null) continue
+          requiredWorkspaces.add(matchingWorkspace)
+        }
+      }
+    }
+  }
+
+  for (const workspace of project.workspaces) {
+    if (!requiredWorkspaces.has(workspace)) {
+      workspace.manifest.installConfig = workspace.manifest.installConfig || {}
+      workspace.manifest.installConfig.selfReferences = false
+      workspace.manifest.dependencies.clear()
+      workspace.manifest.devDependencies.clear()
+      workspace.manifest.peerDependencies.clear()
+    }
+  }
+
+  project.workspaces = [...requiredWorkspaces]
+
+  const cache = await Cache.find(project.configuration)
+  await project.resolveEverything({ report: new ThrowReport(), cache })
 }
 
 type Author = { name?: string; email?: string; url?: string }
