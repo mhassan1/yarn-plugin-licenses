@@ -7,6 +7,10 @@
 │  │  ├─ URL: git://github.com/tarruda/has.git
 │  │  ├─ VendorName: Thiago de Arruda
 │  │  └─ VendorUrl: https://github.com/tarruda/has
+│  ├─ has-tostringtag@npm:1.0.2 (via npm:^1.0.0)
+│  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
+│  │  ├─ VendorName: Jordan Harband
+│  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
 │  │  ├─ VendorName: Thomas Watson Steen
@@ -33,4 +37,5 @@
 │
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
    └─ test-package@workspace:. (via workspace:.)

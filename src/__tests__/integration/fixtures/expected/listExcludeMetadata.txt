@@ -1,6 +1,7 @@
 ├─ MIT
 │  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
 │  ├─ has@npm:1.0.3 (via npm:^1.0.3)
+│  ├─ has-tostringtag@npm:1.0.2 (via npm:^1.0.0)
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
 │  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
 │  ├─ is-function@npm:1.0.2 (via npm:^1.0.2)
@@ -12,4 +13,5 @@
 │
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
    └─ test-package@workspace:. (via workspace:.)

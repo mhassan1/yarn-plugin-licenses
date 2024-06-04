@@ -95,6 +95,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"has-symbols@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "has-symbols@npm:1.0.3"
+  checksum: e6922b4345a3f37069cdfe8600febbca791c94988c01af3394d86ca3360b4b93928bbf395859158f88099cb10b19d98e3bbab7c9ff2c1bd09cf665ee90afa2c3
+  languageName: node
+  linkType: hard
+
+"has-tostringtag@npm:^1.0.0":
+  version: 1.0.2
+  resolution: "has-tostringtag@npm:1.0.2"
+  dependencies:
+    has-symbols: "npm:^1.0.3"
+  checksum: a8b166462192bafe3d9b6e420a1d581d93dd867adb61be223a17a8d6dad147aa77a8be32c961bb2f27b3ef893cae8d36f564ab651f5e9b7938ae86f74027c48c
+  languageName: node
+  linkType: hard
+
 "has@npm:^1.0.3":
   version: 1.0.3
   resolution: "has@npm:1.0.3"
@@ -171,6 +187,15 @@ __metadata:
     is-ci: "npm:^2.0.0"
     is-function: "npm:^1.0.2"
     is-promise: "npm:^3.0.0"
+    package2: "npm:0.0.0"
+  languageName: unknown
+  linkType: soft
+
+"package2@npm:0.0.0, package2@workspace:packages/package2":
+  version: 0.0.0-use.local
+  resolution: "package2@workspace:packages/package2"
+  dependencies:
+    has-tostringtag: "npm:^1.0.0"
   languageName: unknown
   linkType: soft
 

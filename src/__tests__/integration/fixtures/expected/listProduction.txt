@@ -18,4 +18,5 @@
 │
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
    └─ test-package@workspace:. (via workspace:.)
