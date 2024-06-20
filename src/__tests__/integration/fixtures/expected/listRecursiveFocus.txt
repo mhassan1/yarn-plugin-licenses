@@ -7,10 +7,6 @@
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
-│  ├─ ci-info@npm:1.6.0 (via npm:^1.5.0)
-│  │  ├─ URL: https://github.com/watson/ci-info.git
-│  │  ├─ VendorName: Thomas Watson Steen
-│  │  └─ VendorUrl: https://github.com/watson/ci-info
 │  ├─ ci-info@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/ci-info.git
 │  │  ├─ VendorName: Thomas Watson Steen
@@ -31,14 +27,6 @@
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
-│  ├─ function-bind@npm:1.1.1 (via npm:^1.1.1)
-│  │  ├─ URL: git://github.com/Raynos/function-bind.git
-│  │  ├─ VendorName: Raynos
-│  │  └─ VendorUrl: https://github.com/Raynos/function-bind
-│  ├─ has@npm:1.0.3 (via npm:^1.0.3)
-│  │  ├─ URL: git://github.com/tarruda/has.git
-│  │  ├─ VendorName: Thiago de Arruda
-│  │  └─ VendorUrl: https://github.com/tarruda/has
 │  ├─ has-symbols@npm:1.0.3 (via npm:^1.0.3)
 │  │  ├─ URL: git://github.com/inspect-js/has-symbols.git
 │  │  ├─ VendorName: Jordan Harband
@@ -47,10 +35,6 @@
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
-│  │  ├─ URL: https://github.com/watson/is-ci.git
-│  │  ├─ VendorName: Thomas Watson Steen
-│  │  └─ VendorUrl: https://github.com/watson/is-ci
 │  ├─ is-ci@npm:2.0.0 (via npm:^2.0.0)
 │  │  ├─ URL: https://github.com/watson/is-ci.git
 │  │  ├─ VendorName: Thomas Watson Steen
@@ -62,9 +46,6 @@
 │  ├─ is-promise@npm:3.0.0 (via npm:^3.0.0)
 │  │  ├─ URL: https://github.com/then/is-promise.git
 │  │  └─ VendorName: ForbesLindesay
-│  ├─ is-promise@npm:4.0.0 (via npm:^4.0.0)
-│  │  ├─ URL: https://github.com/then/is-promise.git
-│  │  └─ VendorName: ForbesLindesay
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
 │  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
@@ -74,12 +55,6 @@
 │     ├─ VendorName: Rob Wu
 │     └─ VendorUrl: https://github.com/Rob--W/proxy-from-env#readme
 │
-├─ Apache-2.0
-│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
-│     ├─ URL: https://github.com/mikeal/caseless
-│     └─ VendorName: Mikeal Rogers
-│
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
-   └─ test-package@workspace:. (via workspace:.)
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)

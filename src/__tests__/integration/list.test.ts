@@ -17,6 +17,26 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses list (%s)', (linker) =>
     ['recursively', '--recursive', 'listRecursive.txt'],
     ['non-recursively for production', '--production', 'listProduction.txt'],
     ['recursively for production', '--recursive --production', 'listRecursiveProduction.txt'],
+    ['non-recursively with focus', '--focus package1', 'listFocus.txt'],
+    ['recursively with focus', '--recursive --focus package1', 'listRecursiveFocus.txt'],
+    ['non-recursively for production with focus', '--production --focus package1', 'listProductionFocus.txt'],
+    [
+      'recursively for production with focus',
+      '--recursive --production --focus package1',
+      'listRecursiveProductionFocus.txt'
+    ],
+    ['non-recursively with focus on a leaf workspace', '--focus package2', 'listFocusLeaf.txt'],
+    ['recursively with focus on a leaf workspace', '--recursive --focus package2', 'listRecursiveFocusLeaf.txt'],
+    [
+      'non-recursively for production with focus on a leaf',
+      '--production --focus package2',
+      'listProductionFocusLeaf.txt'
+    ],
+    [
+      'recursively for production with focus on a leaf workspace',
+      '--recursive --production --focus package2',
+      'listRecursiveProductionFocusLeaf.txt'
+    ],
     ['as json', '--json', 'listJson.txt'],
     ['without metadata', '--exclude-metadata', 'listExcludeMetadata.txt'],
     ['without metadata as json', '--json --exclude-metadata', 'listExcludeMetadataJson.txt']

@@ -15,7 +15,27 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses generate-disclaimer (%s
     ['non-recursively', '', 'disclaimer.txt'],
     ['recursively', '--recursive', 'disclaimerRecursive.txt'],
     ['non-recursively for production', '--production', 'disclaimerProduction.txt'],
-    ['recursively for production', '--recursive --production', 'disclaimerRecursiveProduction.txt']
+    ['recursively for production', '--recursive --production', 'disclaimerRecursiveProduction.txt'],
+    ['non-recursively with focus', '--focus package1', 'disclaimerFocus.txt'],
+    ['recursively with focus', '--recursive --focus package1', 'disclaimerRecursiveFocus.txt'],
+    ['non-recursively for production with focus', '--production --focus package1', 'disclaimerProductionFocus.txt'],
+    [
+      'recursively for production with focus',
+      '--recursive --production --focus package1',
+      'disclaimerRecursiveProductionFocus.txt'
+    ],
+    ['non-recursively with focus on a leaf workspace', '--focus package2', 'disclaimerFocusLeaf.txt'],
+    ['recursively with focus on a leaf workspace', '--recursive --focus package2', 'disclaimerRecursiveFocusLeaf.txt'],
+    [
+      'non-recursively for production with focus on a leaf',
+      '--production --focus package2',
+      'disclaimerProductionFocusLeaf.txt'
+    ],
+    [
+      'recursively for production with focus on a leaf workspace',
+      '--recursive --production --focus package2',
+      'disclaimerRecursiveProductionFocusLeaf.txt'
+    ]
   ])(`should generate disclaimer %s`, (description, flags, expected) => {
     const stdout = execSync(`yarn licenses generate-disclaimer ${flags}`, { cwd }).toString()
     expect(stdout).toBe(

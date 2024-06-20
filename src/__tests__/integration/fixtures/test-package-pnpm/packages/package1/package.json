@@ -6,6 +6,7 @@
     "is-promise": "^3.0.0"
   },
   "devDependencies": {
-    "is-function": "^1.0.2"
+    "is-function": "^1.0.2",
+    "package2": "0.0.0"
   }
 }

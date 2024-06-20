@@ -1,0 +1,2 @@
+└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)

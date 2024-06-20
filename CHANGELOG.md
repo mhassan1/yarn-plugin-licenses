@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.14.0] - 2024-06-20
+[0.14.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.13.1...v0.14.0
+
+- Add `--focus` flag for focusing on specific workspaces
+
 ## [0.13.1] - 2023-11-14
 [0.13.1]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.13.0...v0.13.1
 
