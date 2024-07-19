@@ -32,7 +32,7 @@ export const pluginRootDir: PortablePath =
  * @param {boolean} recursive - Whether to compute licenses recursively
  * @param {boolean} production - Whether to exclude devDependencies
  * @param {boolean} excludeMetadata - Whether to exclude metadata in tree
- * @returns {treeUtils.TreeNode} Root tree node
+ * @returns Root tree node
  */
 export const getTree = async (
   project: Project,
@@ -40,9 +40,9 @@ export const getTree = async (
   recursive: boolean,
   production: boolean,
   excludeMetadata: boolean
-): Promise<treeUtils.TreeNode> => {
+) => {
   const rootChildren: treeUtils.TreeMap = {}
-  const root: treeUtils.TreeNode = { children: rootChildren }
+  const root = { children: rootChildren } satisfies treeUtils.TreeNode
 
   const sortedPackages = await getSortedPackages(project, recursive, production)
 

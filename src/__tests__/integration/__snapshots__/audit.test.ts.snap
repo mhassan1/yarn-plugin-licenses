@@ -1,0 +1,568 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`licenses audit (node-modules) should audit as json with allowed licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (node-modules) should audit as json with blocked licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively for production with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively for production with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively for production with focus on a leaf with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively for production with focus on a leaf with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit non-recursively for production with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package1@workspace:packages/package1 (via workspace:packages/package1)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively for production with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit non-recursively with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit non-recursively with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ package2@workspace:packages/package2 (via npm:0.0.0)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit non-recursively with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit recursively for production with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively for production with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively for production with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively for production with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit recursively for production with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package1@workspace:packages/package1 (via workspace:packages/package1)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively for production with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit recursively with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit recursively with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit recursively with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (node-modules) should audit without metadata as json with allowed licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (node-modules) should audit without metadata as json with blocked licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (node-modules) should audit without metadata with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (node-modules) should audit without metadata with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+"
+`;
+
+exports[`licenses audit (pnp) should audit as json with allowed licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (pnp) should audit as json with blocked licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively for production with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively for production with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively for production with focus on a leaf with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively for production with focus on a leaf with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit non-recursively for production with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package1@workspace:packages/package1 (via workspace:packages/package1)
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively for production with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit non-recursively with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit non-recursively with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ package2@workspace:packages/package2 (via npm:0.0.0)
+"
+`;
+
+exports[`licenses audit (pnp) should audit non-recursively with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit recursively for production with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively for production with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively for production with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively for production with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit recursively for production with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package1@workspace:packages/package1 (via workspace:packages/package1)
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively for production with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit recursively with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit recursively with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnp) should audit recursively with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnp) should audit without metadata as json with allowed licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (pnp) should audit without metadata as json with blocked licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (pnp) should audit without metadata with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnp) should audit without metadata with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit as json with allowed licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (pnpm) should audit as json with blocked licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively for production with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively for production with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively for production with focus on a leaf with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively for production with focus on a leaf with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit non-recursively for production with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package1@workspace:packages/package1 (via workspace:packages/package1)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively for production with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit non-recursively with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit non-recursively with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ package2@workspace:packages/package2 (via npm:0.0.0)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit non-recursively with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit recursively for production with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively for production with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively for production with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively for production with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit recursively for production with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package1@workspace:packages/package1 (via workspace:packages/package1)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively for production with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit recursively with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│     ├─ URL: https://github.com/mikeal/caseless
+│     └─ VendorName: Mikeal Rogers
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+      ├─ URL: https://github.com/mikeal/caseless
+      └─ VendorName: Mikeal Rogers
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively with focus on a leaf workspace with allowed licenses 1`] = `
+"└─ UNKNOWN
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively with focus on a leaf workspace with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit recursively with focus with allowed licenses 1`] = `
+"└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit recursively with focus with blocked licenses 1`] = `""`;
+
+exports[`licenses audit (pnpm) should audit without metadata as json with allowed licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (pnpm) should audit without metadata as json with blocked licenses 1`] = `
+"{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
+"
+`;
+
+exports[`licenses audit (pnpm) should audit without metadata with allowed licenses 1`] = `
+"├─ Apache-2.0
+│  └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+│
+└─ UNKNOWN
+   ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ test-package@workspace:. (via workspace:.)
+"
+`;
+
+exports[`licenses audit (pnpm) should audit without metadata with blocked licenses 1`] = `
+"└─ Apache-2.0
+   └─ caseless@npm:0.12.0 (via npm:^0.12.0)
+"
+`;
