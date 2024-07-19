@@ -1,5 +1,5 @@
 import { Configuration, Project, treeUtils } from '@yarnpkg/core'
-import { xfs, ppath, npath, PortablePath, normalizeLineEndings } from '@yarnpkg/fslib'
+import { ppath, npath, PortablePath } from '@yarnpkg/fslib'
 import PnpPlugin from '@yarnpkg/plugin-pnp'
 import NpmPlugin from '@yarnpkg/plugin-npm'
 import { pluginRootDir, getTree } from '../../utils'
@@ -13,41 +13,24 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses list (%s)', (linker) =>
   })
 
   it.each([
-    ['non-recursively', '', 'list.txt'],
-    ['recursively', '--recursive', 'listRecursive.txt'],
-    ['non-recursively for production', '--production', 'listProduction.txt'],
-    ['recursively for production', '--recursive --production', 'listRecursiveProduction.txt'],
-    ['non-recursively with focus', '--focus package1', 'listFocus.txt'],
-    ['recursively with focus', '--recursive --focus package1', 'listRecursiveFocus.txt'],
-    ['non-recursively for production with focus', '--production --focus package1', 'listProductionFocus.txt'],
-    [
-      'recursively for production with focus',
-      '--recursive --production --focus package1',
-      'listRecursiveProductionFocus.txt'
-    ],
-    ['non-recursively with focus on a leaf workspace', '--focus package2', 'listFocusLeaf.txt'],
-    ['recursively with focus on a leaf workspace', '--recursive --focus package2', 'listRecursiveFocusLeaf.txt'],
-    [
-      'non-recursively for production with focus on a leaf',
-      '--production --focus package2',
-      'listProductionFocusLeaf.txt'
-    ],
-    [
-      'recursively for production with focus on a leaf workspace',
-      '--recursive --production --focus package2',
-      'listRecursiveProductionFocusLeaf.txt'
-    ],
-    ['as json', '--json', 'listJson.txt'],
-    ['without metadata', '--exclude-metadata', 'listExcludeMetadata.txt'],
-    ['without metadata as json', '--json --exclude-metadata', 'listExcludeMetadataJson.txt']
-  ])(`should list licenses %s`, (description, flags, expected) => {
+    ['non-recursively', ''],
+    ['recursively', '--recursive'],
+    ['non-recursively for production', '--production'],
+    ['recursively for production', '--recursive --production'],
+    ['non-recursively with focus', '--focus package1'],
+    ['recursively with focus', '--recursive --focus package1'],
+    ['non-recursively for production with focus', '--production --focus package1'],
+    ['recursively for production with focus', '--recursive --production --focus package1'],
+    ['non-recursively with focus on a leaf workspace', '--focus package2'],
+    ['recursively with focus on a leaf workspace', '--recursive --focus package2'],
+    ['non-recursively for production with focus on a leaf', '--production --focus package2'],
+    ['recursively for production with focus on a leaf workspace', '--recursive --production --focus package2'],
+    ['as json', '--json'],
+    ['without metadata', '--exclude-metadata'],
+    ['without metadata as json', '--json --exclude-metadata']
+  ])(`should list licenses %s`, (description, flags) => {
     const stdout = execSync(`yarn licenses list ${flags}`, { cwd }).toString()
-    expect(stdout).toBe(
-      normalizeLineEndings(
-        '\n',
-        xfs.readFileSync(ppath.join(__dirname as PortablePath, `fixtures/expected/${expected}` as PortablePath), 'utf8')
-      )
-    )
+    expect(stdout).toMatchSnapshot()
   })
 })
 
@@ -65,12 +48,12 @@ describe('licenses list (node-modules with aliases)', () => {
 
 describe('getTree', () => {
   it.each([
-    ['non-recursively', false, false, false, 'list.txt'],
-    ['recursively', true, false, false, 'listRecursive.txt'],
-    ['non-recursively for production', false, true, false, 'listProduction.txt'],
-    ['recursively for production', true, true, false, 'listRecursiveProduction.txt'],
-    ['exclude metadata', false, false, true, 'listExcludeMetadata.txt']
-  ])('should list licenses %s', async (description, recursive, production, excludeMetadata, expected) => {
+    ['non-recursively', false, false, false],
+    ['recursively', true, false, false],
+    ['non-recursively for production', false, true, false],
+    ['recursively for production', true, true, false],
+    ['exclude metadata', false, false, true]
+  ])('should list licenses %s', async (description, recursive, production, excludeMetadata) => {
     const cwd = ppath.join(
       pluginRootDir,
       'src/__tests__/integration/fixtures/test-package-node-modules' as PortablePath
@@ -108,11 +91,6 @@ describe('getTree', () => {
     })
     await new Promise((resolve) => setImmediate(resolve))
 
-    expect(stdout).toBe(
-      normalizeLineEndings(
-        '\n',
-        xfs.readFileSync(ppath.join(__dirname as PortablePath, `fixtures/expected/${expected}` as PortablePath), 'utf8')
-      )
-    )
+    expect(stdout).toMatchSnapshot()
   })
 })

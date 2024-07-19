@@ -1,5 +1,5 @@
 import { Configuration, Project } from '@yarnpkg/core'
-import { xfs, ppath, npath, PortablePath, normalizeLineEndings } from '@yarnpkg/fslib'
+import { ppath, npath, PortablePath } from '@yarnpkg/fslib'
 import PnpPlugin from '@yarnpkg/plugin-pnp'
 import NpmPlugin from '@yarnpkg/plugin-npm'
 import { pluginRootDir, getDisclaimer } from '../../utils'
@@ -12,48 +12,31 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses generate-disclaimer (%s
   })
 
   it.each([
-    ['non-recursively', '', 'disclaimer.txt'],
-    ['recursively', '--recursive', 'disclaimerRecursive.txt'],
-    ['non-recursively for production', '--production', 'disclaimerProduction.txt'],
-    ['recursively for production', '--recursive --production', 'disclaimerRecursiveProduction.txt'],
-    ['non-recursively with focus', '--focus package1', 'disclaimerFocus.txt'],
-    ['recursively with focus', '--recursive --focus package1', 'disclaimerRecursiveFocus.txt'],
-    ['non-recursively for production with focus', '--production --focus package1', 'disclaimerProductionFocus.txt'],
-    [
-      'recursively for production with focus',
-      '--recursive --production --focus package1',
-      'disclaimerRecursiveProductionFocus.txt'
-    ],
-    ['non-recursively with focus on a leaf workspace', '--focus package2', 'disclaimerFocusLeaf.txt'],
-    ['recursively with focus on a leaf workspace', '--recursive --focus package2', 'disclaimerRecursiveFocusLeaf.txt'],
-    [
-      'non-recursively for production with focus on a leaf',
-      '--production --focus package2',
-      'disclaimerProductionFocusLeaf.txt'
-    ],
-    [
-      'recursively for production with focus on a leaf workspace',
-      '--recursive --production --focus package2',
-      'disclaimerRecursiveProductionFocusLeaf.txt'
-    ]
-  ])(`should generate disclaimer %s`, (description, flags, expected) => {
+    ['non-recursively', ''],
+    ['recursively', '--recursive'],
+    ['non-recursively for production', '--production'],
+    ['recursively for production', '--recursive --production'],
+    ['non-recursively with focus', '--focus package1'],
+    ['recursively with focus', '--recursive --focus package1'],
+    ['non-recursively for production with focus', '--production --focus package1'],
+    ['recursively for production with focus', '--recursive --production --focus package1'],
+    ['non-recursively with focus on a leaf workspace', '--focus package2'],
+    ['recursively with focus on a leaf workspace', '--recursive --focus package2'],
+    ['non-recursively for production with focus on a leaf', '--production --focus package2'],
+    ['recursively for production with focus on a leaf workspace', '--recursive --production --focus package2']
+  ])(`should generate disclaimer %s`, (description, flags) => {
     const stdout = execSync(`yarn licenses generate-disclaimer ${flags}`, { cwd }).toString()
-    expect(stdout).toBe(
-      normalizeLineEndings(
-        '\n',
-        xfs.readFileSync(ppath.join(__dirname as PortablePath, `fixtures/expected/${expected}` as PortablePath), 'utf8')
-      )
-    )
+    expect(stdout).toMatchSnapshot()
   })
 })
 
 describe('getDisclaimer', () => {
   it.each([
-    ['non-recursively', false, false, 'disclaimer.txt'],
-    ['recursively', true, false, 'disclaimerRecursive.txt'],
-    ['non-recursively for production', false, true, 'disclaimerProduction.txt'],
-    ['recursively for production', true, true, 'disclaimerRecursiveProduction.txt']
-  ])('should generate disclaimer %s', async (description, recursive, production, expected) => {
+    ['non-recursively', false, false],
+    ['recursively', true, false],
+    ['non-recursively for production', false, true],
+    ['recursively for production', true, true]
+  ])('should generate disclaimer %s', async (description, recursive, production) => {
     const cwd = ppath.join(
       pluginRootDir,
       'src/__tests__/integration/fixtures/test-package-node-modules' as PortablePath
@@ -75,11 +58,6 @@ describe('getDisclaimer', () => {
 
     const disclaimer = await getDisclaimer(project, recursive, production)
 
-    expect(disclaimer).toBe(
-      normalizeLineEndings(
-        '\n',
-        xfs.readFileSync(ppath.join(__dirname as PortablePath, `fixtures/expected/${expected}` as PortablePath), 'utf8')
-      )
-    )
+    expect(disclaimer).toMatchSnapshot()
   })
 })
