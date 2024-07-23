@@ -1,5 +1,5 @@
 import { npath } from '@yarnpkg/fslib'
-import { execSync } from 'child_process'
+import { execSync, spawnSync } from 'child_process'
 
 describe.each(['pnp', 'node-modules', 'pnpm'])('licenses audit (%s)', (linker) => {
   const cwd = npath.join(__dirname, 'fixtures', `test-package-${linker}`)
@@ -26,25 +26,16 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses audit (%s)', (linker) =
   ])(`should audit %s`, (description, flags) => {
     it.each([
       ['allowed', '--allowed MIT'],
-      ['blocked', `--blocked Apache-2.0`]
-    ])(`with %s licenses`, (description, licenses) => {
-      const stdout = execSync(`yarn licenses audit ${licenses} ${flags}`, { cwd }).toString()
-      expect(stdout).toMatchSnapshot()
+      ['blocked', `--blocked Apache-2.0 --blocked UNKNOWN`]
+    ])(`with %s licenses`, async (description, licenses) => {
+      const { stdout, status } = spawnSync(`yarn licenses audit ${licenses} ${flags}`, { cwd, shell: true })
+      expect(stdout.toString()).toMatchSnapshot()
+      expect(status).toBe(1)
     })
   })
 
   it('should throw an error if both --allowed and --blocked are passed', () => {
-    expect(() => execSync(`yarn licenses audit --allowed MIT --blocked Apache-2.0`, { cwd })).toThrowError(
-      expect.objectContaining({ status: 1 })
-    )
+    const { status } = spawnSync(`yarn licenses audit --allowed MIT --blocked Apache-2.0`, { cwd, shell: true })
+    expect(status).toBe(1)
   })
-
-  it.each(['--allowed MIT', `--blocked Apache-2.0`])(
-    'should exit with a non-zero status code if --exit-code is passed and there are violations',
-    (flags) => {
-      expect(() => execSync(`yarn licenses audit --exit-code ${flags}`, { cwd })).toThrowError(
-        expect.objectContaining({ status: 1 })
-      )
-    }
-  )
 })
