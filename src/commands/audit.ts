@@ -1,6 +1,6 @@
 import { WorkspaceRequiredError } from '@yarnpkg/cli'
 import { CommandContext, Configuration, Project, treeUtils } from '@yarnpkg/core'
-import { Command, Usage, Option } from 'clipanion'
+import { Command, Usage, Option, UsageError } from 'clipanion'
 import { getTree, focusWorkspaces } from '../utils'
 
 export class LicensesAuditCommand extends Command<CommandContext> {
@@ -66,7 +66,7 @@ export class LicensesAuditCommand extends Command<CommandContext> {
 
   async execute(): Promise<number> {
     if ((this.allowedLicenses.length === 0) === (this.blockedLicenses.length === 0)) {
-      throw new Error('You must provide at least one of --allowed or --blocked, but not both')
+      throw new UsageError('You must provide at least one of --allowed or --blocked, but not both')
     }
 
     const configuration = await Configuration.find(this.context.cwd, this.context.plugins)
