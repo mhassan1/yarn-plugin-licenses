@@ -37,7 +37,7 @@ export class LicensesAuditCommand extends Command<CommandContext> {
   static usage: Usage = Command.Usage({
     description: `audits the licenses for all packages in the project`,
     details: `
-      This command audits and prints the license information for packages in the project according to rules set. By default, only direct dependencies are audited.
+      This command audits and prints the license information for packages in the project that violate the rules set. By default, only direct dependencies are audited.
 
       If \`-R,--recursive\` is set, the auditing will include transitive dependencies (dependencies of direct dependencies).
 
