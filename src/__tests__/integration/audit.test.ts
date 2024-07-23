@@ -34,8 +34,17 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses audit (%s)', (linker) =
   })
 
   it('should throw an error if both --allowed and --blocked are passed', () => {
-    expect(() => execSync(`yarn licenses audit --allowed 0BSD --blocked ISC`, { cwd })).toThrowError(
+    expect(() => execSync(`yarn licenses audit --allowed MIT --blocked Apache-2.0`, { cwd })).toThrowError(
       expect.objectContaining({ status: 1 })
     )
   })
+
+  it.each(['--allowed MIT', `--blocked Apache-2.0`])(
+    'should exit with a non-zero status code if --exit-code is passed and there are violations',
+    (flags) => {
+      expect(() => execSync(`yarn licenses audit --exit-code ${flags}`, { cwd })).toThrowError(
+        expect.objectContaining({ status: 1 })
+      )
+    }
+  )
 })

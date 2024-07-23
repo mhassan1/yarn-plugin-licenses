@@ -34,6 +34,10 @@ export class LicensesAuditCommand extends Command<CommandContext> {
     description: `List of blocked licenses`
   })
 
+  exitCode = Option.Boolean(`--exit-code`, false, {
+    description: `Exits with a non-zero code if there are any violations`
+  })
+
   static usage: Usage = Command.Usage({
     description: `audits the licenses for all packages in the project`,
     details: `
@@ -60,7 +64,7 @@ export class LicensesAuditCommand extends Command<CommandContext> {
     ]
   })
 
-  async execute(): Promise<void> {
+  async execute(): Promise<number> {
     if ((this.allowedLicenses.length === 0) === (this.blockedLicenses.length === 0)) {
       throw new Error('You must provide at least one of --allowed or --blocked, but not both')
     }
@@ -99,5 +103,10 @@ export class LicensesAuditCommand extends Command<CommandContext> {
         separators: 1
       }
     )
+
+    if (this.exitCode && reportedLicenses.length > 0) {
+      return 1
+    }
+    return 0
   }
 }
