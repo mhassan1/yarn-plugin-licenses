@@ -34,6 +34,12 @@ describe.each(['pnp', 'node-modules', 'pnpm'])('licenses audit (%s)', (linker) =
     })
   })
 
+  it('should exit with 0 if no violations are found', () => {
+    const { stdout, status } = spawnSync(`yarn licenses audit --blocked GPL-3.0`, { cwd, shell: true })
+    expect(stdout.length).toBe(0)
+    expect(status).toBe(0)
+  })
+
   it('should throw an error if both --allowed and --blocked are passed', () => {
     const { status } = spawnSync(`yarn licenses audit --allowed MIT --blocked Apache-2.0`, { cwd, shell: true })
     expect(status).toBe(1)
