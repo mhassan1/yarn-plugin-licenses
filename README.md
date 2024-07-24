@@ -10,7 +10,7 @@ For Yarn v2 support, install [v0.6.0](https://github.com/mhassan1/yarn-plugin-li
 ## Install
 
 ```
-yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-licenses/v0.14.0/bundles/@yarnpkg/plugin-licenses.js
+yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-licenses/v0.15.0/bundles/@yarnpkg/plugin-licenses.js
 ```
 
 ## Usage
