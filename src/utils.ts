@@ -24,6 +24,10 @@ export const pluginRootDir: PortablePath =
     : // __dirname = `<rootDir>/src`
       ppath.join(npath.toPortablePath(__dirname), '..' as PortablePath)
 
+type TreeRoot = {
+  children: treeUtils.TreeMap
+}
+
 /**
  * Get the license tree for a project
  *
@@ -32,7 +36,7 @@ export const pluginRootDir: PortablePath =
  * @param {boolean} recursive - Whether to compute licenses recursively
  * @param {boolean} production - Whether to exclude devDependencies
  * @param {boolean} excludeMetadata - Whether to exclude metadata in tree
- * @returns {treeUtils.TreeNode} Root tree node
+ * @returns {Promise<TreeRoot>} Root tree node
  */
 export const getTree = async (
   project: Project,
@@ -40,9 +44,9 @@ export const getTree = async (
   recursive: boolean,
   production: boolean,
   excludeMetadata: boolean
-): Promise<treeUtils.TreeNode> => {
+): Promise<TreeRoot> => {
   const rootChildren: treeUtils.TreeMap = {}
-  const root: treeUtils.TreeNode = { children: rootChildren }
+  const root: TreeRoot = { children: rootChildren }
 
   const sortedPackages = await getSortedPackages(project, recursive, production)
 
