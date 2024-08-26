@@ -2,7 +2,7 @@
 
 exports[`getTree should list licenses exclude metadata 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  ├─ has@npm:1.0.3 (via npm:^1.0.3)
 │  ├─ has-tostringtag@npm:1.0.2 (via npm:^1.0.0)
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
@@ -23,7 +23,7 @@ exports[`getTree should list licenses exclude metadata 1`] = `
 
 exports[`getTree should list licenses non-recursively 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -68,7 +68,7 @@ exports[`getTree should list licenses non-recursively 1`] = `
 
 exports[`getTree should list licenses non-recursively for production 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -98,7 +98,7 @@ exports[`getTree should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -118,7 +118,7 @@ exports[`getTree should list licenses recursively 1`] = `
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -187,7 +187,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -203,7 +203,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -240,7 +240,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 `;
 
 exports[`licenses list (node-modules) should list licenses as json 1`] = `
-"{"value":"MIT","children":{"axios@npm:1.6.1":{"value":{"locator":"axios@npm:1.6.1","descriptor":"axios@npm:^1.6.0"},"children":{"url":"https://github.com/axios/axios.git","vendorName":"Matt Zabriskie","vendorUrl":"https://axios-http.com"}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{"url":"git://github.com/tarruda/has.git","vendorName":"Thiago de Arruda","vendorUrl":"https://github.com/tarruda/has"}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{"url":"git+https://github.com/inspect-js/has-tostringtag.git","vendorName":"Jordan Harband","vendorUrl":"https://github.com/inspect-js/has-tostringtag#readme"}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{"url":"git://github.com/grncdr/js-is-function.git","vendorName":"Stephen Sugden","vendorUrl":"https://github.com/grncdr/js-is-function"}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}}}}
+"{"value":"MIT","children":{"axios@npm:1.7.5":{"value":{"locator":"axios@npm:1.7.5","descriptor":"axios@npm:^1.6.0"},"children":{"url":"https://github.com/axios/axios.git","vendorName":"Matt Zabriskie","vendorUrl":"https://axios-http.com"}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{"url":"git://github.com/tarruda/has.git","vendorName":"Thiago de Arruda","vendorUrl":"https://github.com/tarruda/has"}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{"url":"git+https://github.com/inspect-js/has-tostringtag.git","vendorName":"Jordan Harband","vendorUrl":"https://github.com/inspect-js/has-tostringtag#readme"}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{"url":"git://github.com/grncdr/js-is-function.git","vendorName":"Stephen Sugden","vendorUrl":"https://github.com/grncdr/js-is-function"}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}}}}
 {"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
 {"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
@@ -248,7 +248,7 @@ exports[`licenses list (node-modules) should list licenses as json 1`] = `
 
 exports[`licenses list (node-modules) should list licenses non-recursively 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -293,7 +293,7 @@ exports[`licenses list (node-modules) should list licenses non-recursively 1`] =
 
 exports[`licenses list (node-modules) should list licenses non-recursively for production 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -319,7 +319,7 @@ exports[`licenses list (node-modules) should list licenses non-recursively for p
 
 exports[`licenses list (node-modules) should list licenses non-recursively for production with focus 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -344,7 +344,7 @@ exports[`licenses list (node-modules) should list licenses non-recursively for p
 
 exports[`licenses list (node-modules) should list licenses non-recursively with focus 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -384,7 +384,7 @@ exports[`licenses list (node-modules) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -404,7 +404,7 @@ exports[`licenses list (node-modules) should list licenses recursively 1`] = `
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -473,7 +473,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -489,7 +489,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -531,7 +531,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -547,7 +547,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -588,7 +588,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -604,7 +604,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -664,7 +664,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 
 exports[`licenses list (node-modules) should list licenses without metadata 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  ├─ has@npm:1.0.3 (via npm:^1.0.3)
 │  ├─ has-tostringtag@npm:1.0.2 (via npm:^1.0.0)
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
@@ -684,14 +684,14 @@ exports[`licenses list (node-modules) should list licenses without metadata 1`] 
 `;
 
 exports[`licenses list (node-modules) should list licenses without metadata as json 1`] = `
-"{"value":"MIT","children":{"axios@npm:1.6.1":{"value":{"locator":"axios@npm:1.6.1","descriptor":"axios@npm:^1.6.0"},"children":{}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{}}}}
+"{"value":"MIT","children":{"axios@npm:1.7.5":{"value":{"locator":"axios@npm:1.7.5","descriptor":"axios@npm:^1.6.0"},"children":{}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{}}}}
 {"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
 {"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses list (pnp) should list licenses as json 1`] = `
-"{"value":"MIT","children":{"axios@npm:1.6.1":{"value":{"locator":"axios@npm:1.6.1","descriptor":"axios@npm:^1.6.0"},"children":{"url":"https://github.com/axios/axios.git","vendorName":"Matt Zabriskie","vendorUrl":"https://axios-http.com"}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{"url":"git://github.com/tarruda/has.git","vendorName":"Thiago de Arruda","vendorUrl":"https://github.com/tarruda/has"}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{"url":"git+https://github.com/inspect-js/has-tostringtag.git","vendorName":"Jordan Harband","vendorUrl":"https://github.com/inspect-js/has-tostringtag#readme"}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{"url":"git://github.com/grncdr/js-is-function.git","vendorName":"Stephen Sugden","vendorUrl":"https://github.com/grncdr/js-is-function"}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}}}}
+"{"value":"MIT","children":{"axios@npm:1.7.5":{"value":{"locator":"axios@npm:1.7.5","descriptor":"axios@npm:^1.6.0"},"children":{"url":"https://github.com/axios/axios.git","vendorName":"Matt Zabriskie","vendorUrl":"https://axios-http.com"}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{"url":"git://github.com/tarruda/has.git","vendorName":"Thiago de Arruda","vendorUrl":"https://github.com/tarruda/has"}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{"url":"git+https://github.com/inspect-js/has-tostringtag.git","vendorName":"Jordan Harband","vendorUrl":"https://github.com/inspect-js/has-tostringtag#readme"}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{"url":"git://github.com/grncdr/js-is-function.git","vendorName":"Stephen Sugden","vendorUrl":"https://github.com/grncdr/js-is-function"}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}}}}
 {"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
 {"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
@@ -699,7 +699,7 @@ exports[`licenses list (pnp) should list licenses as json 1`] = `
 
 exports[`licenses list (pnp) should list licenses non-recursively 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -744,7 +744,7 @@ exports[`licenses list (pnp) should list licenses non-recursively 1`] = `
 
 exports[`licenses list (pnp) should list licenses non-recursively for production 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -770,7 +770,7 @@ exports[`licenses list (pnp) should list licenses non-recursively for production
 
 exports[`licenses list (pnp) should list licenses non-recursively for production with focus 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -795,7 +795,7 @@ exports[`licenses list (pnp) should list licenses non-recursively for production
 
 exports[`licenses list (pnp) should list licenses non-recursively with focus 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -835,7 +835,7 @@ exports[`licenses list (pnp) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -855,7 +855,7 @@ exports[`licenses list (pnp) should list licenses recursively 1`] = `
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -924,7 +924,7 @@ exports[`licenses list (pnp) should list licenses recursively for production 1`]
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -940,7 +940,7 @@ exports[`licenses list (pnp) should list licenses recursively for production 1`]
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -982,7 +982,7 @@ exports[`licenses list (pnp) should list licenses recursively for production wit
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -998,7 +998,7 @@ exports[`licenses list (pnp) should list licenses recursively for production wit
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1039,7 +1039,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus 1`] = `
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1055,7 +1055,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus 1`] = `
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1115,7 +1115,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus on a le
 
 exports[`licenses list (pnp) should list licenses without metadata 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  ├─ has@npm:1.0.3 (via npm:^1.0.3)
 │  ├─ has-tostringtag@npm:1.0.2 (via npm:^1.0.0)
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
@@ -1135,14 +1135,14 @@ exports[`licenses list (pnp) should list licenses without metadata 1`] = `
 `;
 
 exports[`licenses list (pnp) should list licenses without metadata as json 1`] = `
-"{"value":"MIT","children":{"axios@npm:1.6.1":{"value":{"locator":"axios@npm:1.6.1","descriptor":"axios@npm:^1.6.0"},"children":{}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{}}}}
+"{"value":"MIT","children":{"axios@npm:1.7.5":{"value":{"locator":"axios@npm:1.7.5","descriptor":"axios@npm:^1.6.0"},"children":{}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{}}}}
 {"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
 {"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses list (pnpm) should list licenses as json 1`] = `
-"{"value":"MIT","children":{"axios@npm:1.6.1":{"value":{"locator":"axios@npm:1.6.1","descriptor":"axios@npm:^1.6.0"},"children":{"url":"https://github.com/axios/axios.git","vendorName":"Matt Zabriskie","vendorUrl":"https://axios-http.com"}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{"url":"git://github.com/tarruda/has.git","vendorName":"Thiago de Arruda","vendorUrl":"https://github.com/tarruda/has"}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{"url":"git+https://github.com/inspect-js/has-tostringtag.git","vendorName":"Jordan Harband","vendorUrl":"https://github.com/inspect-js/has-tostringtag#readme"}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{"url":"git://github.com/grncdr/js-is-function.git","vendorName":"Stephen Sugden","vendorUrl":"https://github.com/grncdr/js-is-function"}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}}}}
+"{"value":"MIT","children":{"axios@npm:1.7.5":{"value":{"locator":"axios@npm:1.7.5","descriptor":"axios@npm:^1.6.0"},"children":{"url":"https://github.com/axios/axios.git","vendorName":"Matt Zabriskie","vendorUrl":"https://axios-http.com"}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{"url":"git://github.com/tarruda/has.git","vendorName":"Thiago de Arruda","vendorUrl":"https://github.com/tarruda/has"}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{"url":"git+https://github.com/inspect-js/has-tostringtag.git","vendorName":"Jordan Harband","vendorUrl":"https://github.com/inspect-js/has-tostringtag#readme"}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{"url":"https://github.com/watson/is-ci.git","vendorName":"Thomas Watson Steen","vendorUrl":"https://github.com/watson/is-ci"}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{"url":"git://github.com/grncdr/js-is-function.git","vendorName":"Stephen Sugden","vendorUrl":"https://github.com/grncdr/js-is-function"}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{"url":"https://github.com/then/is-promise.git","vendorName":"ForbesLindesay"}}}}
 {"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
 {"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
@@ -1150,7 +1150,7 @@ exports[`licenses list (pnpm) should list licenses as json 1`] = `
 
 exports[`licenses list (pnpm) should list licenses non-recursively 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1195,7 +1195,7 @@ exports[`licenses list (pnpm) should list licenses non-recursively 1`] = `
 
 exports[`licenses list (pnpm) should list licenses non-recursively for production 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1221,7 +1221,7 @@ exports[`licenses list (pnpm) should list licenses non-recursively for productio
 
 exports[`licenses list (pnpm) should list licenses non-recursively for production with focus 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1246,7 +1246,7 @@ exports[`licenses list (pnpm) should list licenses non-recursively for productio
 
 exports[`licenses list (pnpm) should list licenses non-recursively with focus 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1286,7 +1286,7 @@ exports[`licenses list (pnpm) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1306,7 +1306,7 @@ exports[`licenses list (pnpm) should list licenses recursively 1`] = `
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1375,7 +1375,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production 1`
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1391,7 +1391,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production 1`
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1433,7 +1433,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production wi
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1449,7 +1449,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production wi
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1490,7 +1490,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus 1`] = 
 │  │  ├─ URL: git+https://github.com/alexindigo/asynckit.git
 │  │  ├─ VendorName: Alex Indigo
 │  │  └─ VendorUrl: https://github.com/alexindigo/asynckit#readme
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  │  ├─ URL: https://github.com/axios/axios.git
 │  │  ├─ VendorName: Matt Zabriskie
 │  │  └─ VendorUrl: https://axios-http.com
@@ -1506,7 +1506,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus 1`] = 
 │  │  ├─ URL: git://github.com/felixge/node-delayed-stream.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: https://github.com/felixge/node-delayed-stream
-│  ├─ follow-redirects@npm:1.15.6 [ffaff] (via npm:^1.15.0 [ffaff])
+│  ├─ follow-redirects@npm:1.15.6 [b23f7] (via npm:^1.15.6 [b23f7])
 │  │  ├─ URL: git@github.com:follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1566,7 +1566,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus on a l
 
 exports[`licenses list (pnpm) should list licenses without metadata 1`] = `
 "├─ MIT
-│  ├─ axios@npm:1.6.1 (via npm:^1.6.0)
+│  ├─ axios@npm:1.7.5 (via npm:^1.6.0)
 │  ├─ has@npm:1.0.3 (via npm:^1.0.3)
 │  ├─ has-tostringtag@npm:1.0.2 (via npm:^1.0.0)
 │  ├─ is-ci@npm:1.2.1 (via npm:^1.0.0)
@@ -1586,7 +1586,7 @@ exports[`licenses list (pnpm) should list licenses without metadata 1`] = `
 `;
 
 exports[`licenses list (pnpm) should list licenses without metadata as json 1`] = `
-"{"value":"MIT","children":{"axios@npm:1.6.1":{"value":{"locator":"axios@npm:1.6.1","descriptor":"axios@npm:^1.6.0"},"children":{}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{}}}}
+"{"value":"MIT","children":{"axios@npm:1.7.5":{"value":{"locator":"axios@npm:1.7.5","descriptor":"axios@npm:^1.6.0"},"children":{}},"has@npm:1.0.3":{"value":{"locator":"has@npm:1.0.3","descriptor":"has@npm:^1.0.3"},"children":{}},"has-tostringtag@npm:1.0.2":{"value":{"locator":"has-tostringtag@npm:1.0.2","descriptor":"has-tostringtag@npm:^1.0.0"},"children":{}},"is-ci@npm:1.2.1":{"value":{"locator":"is-ci@npm:1.2.1","descriptor":"is-ci@npm:^1.0.0"},"children":{}},"is-ci@npm:2.0.0":{"value":{"locator":"is-ci@npm:2.0.0","descriptor":"is-ci@npm:^2.0.0"},"children":{}},"is-function@npm:1.0.2":{"value":{"locator":"is-function@npm:1.0.2","descriptor":"is-function@npm:^1.0.2"},"children":{}},"is-promise@npm:3.0.0":{"value":{"locator":"is-promise@npm:3.0.0","descriptor":"is-promise@npm:^3.0.0"},"children":{}},"is-promise@npm:4.0.0":{"value":{"locator":"is-promise@npm:4.0.0","descriptor":"is-promise@npm:^4.0.0"},"children":{}}}}
 {"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
 {"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
