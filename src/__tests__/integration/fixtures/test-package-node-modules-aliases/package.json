@@ -6,7 +6,7 @@
   "resolutions": {
     "chokidar/braces": "^3.0.3",
     "glob-parent": "^5.1.2",
-    "micromatch/braces": "^3.0.3",
+    "micromatch": "^4.0.8",
     "semver": "^7.5.3",
     "trim": "^0.0.3"
   }
