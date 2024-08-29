@@ -4,8 +4,7 @@
     "babel-loader": "^8.2.4"
   },
   "resolutions": {
-    "chokidar/braces": "^3.0.3",
-    "glob-parent": "^5.1.2",
+    "@storybook/core-common/webpack": "^5.94.0",
     "micromatch": "^4.0.8",
     "semver": "^7.5.3",
     "trim": "^0.0.3"
