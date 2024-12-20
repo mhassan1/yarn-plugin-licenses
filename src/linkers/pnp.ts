@@ -22,7 +22,7 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
   const locator = structUtils.convertPackageToLocator(pkg)
   const pnpLocator = {
     name: structUtils.stringifyIdent(locator),
-    reference: locator.reference
+    reference: locator.reference.startsWith('virtual:') ? locator.reference.split('#')[1] : locator.reference
   }
 
   const packageInformation = pnpApi.getPackageInformation(pnpLocator)
