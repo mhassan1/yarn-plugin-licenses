@@ -30,7 +30,6 @@ type TreeRoot = {
 
 /**
  * Get the license tree for a project
- *
  * @param {Project} project - Yarn project
  * @param {boolean} json - Whether to output as JSON
  * @param {boolean} recursive - Whether to compute licenses recursively
@@ -123,7 +122,6 @@ export const getTree = async (
 
 /**
  * Get a sorted map of packages for the project
- *
  * @param {Project} project - Yarn project
  * @param {boolean} recursive - Whether to get packages recursively
  * @param {boolean} production - Whether to exclude devDependencies
@@ -188,7 +186,6 @@ export const getSortedPackages = async (
 /* istanbul ignore next */
 /**
  * Focus on the specified workspaces
- *
  * @param {Project} project - Yarn project
  * @param {string[]} focus - Workspaces to focus on
  * @param {boolean} recursive - Whether to get workspaces and packages recursively
@@ -239,7 +236,6 @@ type Author = { name?: string; email?: string; url?: string }
 
 /**
  * Get author information from a manifest's author string
- *
  * @param {string} author - format: "name (url) <email>"
  * @returns {Author} parsed author information
  */
@@ -269,7 +265,6 @@ export function parseAuthor(author: string) {
 
 /**
  * Get license information from a manifest
- *
  * @param {ManifestWithLicenseInfo} manifest - Manifest with license information
  * @returns {LicenseInfo} License information
  */
@@ -319,7 +314,6 @@ const UNKNOWN_LICENSE = 'UNKNOWN'
 
 /**
  * Normalize a manifest license value into a license string
- *
  * @param {ManifestLicenseValue} manifestLicenseValue - Manifest license value
  * @returns {string} License string
  */
@@ -335,7 +329,6 @@ type LicenseInfo = {
 
 /**
  * Normalize a manifest repository value into a repository URL, if found
- *
  * @param {ManifestWithLicenseInfo['repository']} manifestRepositoryValue - Manifest repository value
  * @returns {string|undefined} Repository URL, if found
  */
@@ -355,7 +348,6 @@ const stringifyKeyValue = (key: string, value: string, json: boolean) => {
 
 /**
  * Get the license disclaimer for a project
- *
  * @param {Project} project - Yarn project
  * @param {boolean} recursive - Whether to include licenses recursively
  * @param {boolean} production - Whether to exclude devDependencies

@@ -5,7 +5,6 @@ import { getArchitectureSet } from './utils'
 
 /**
  * Get package path with `node-modules` linker for a given Yarn project and package
- *
  * @param {Project} project - Yarn project
  * @param {Package} pkg - Yarn package
  * @returns {Promise<PortablePath | null>} Package path
@@ -36,7 +35,6 @@ let yarnStateAliases: YarnState
 
 /**
  * Cache Yarn state from `yarn-state.yml`, if it has not already been cached
- *
  * @param {Project} project - Yarn project
  * @returns {Promise<void>}
  */
@@ -54,14 +52,12 @@ const makeYarnState = async (project: Project): Promise<void> => {
 
 /**
  * Expose the virtual file system for reading package files
- *
  * @returns {XFS} Virtual file system
  */
 export const getFs = (): XFS => xfs
 
 /**
  * Get Yarn State for aliases from raw Yarn State
- *
  * @param {YarnState} yarnState Raw Yarn State
  * @returns {YarnState} Yarn State for aliases
  * @private

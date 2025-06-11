@@ -7,7 +7,6 @@ import { getArchitectureSet } from './utils'
 
 /**
  * Get package path with `pnpm` linker for a given Yarn project and package
- *
  * @param {Project} project - Yarn project
  * @param {Package} pkg - Yarn package
  * @returns {Promise<PortablePath | null>} Package path
@@ -34,7 +33,6 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
 
 /**
  * Expose the virtual file system for reading package files
- *
  * @returns {XFS} Virtual file system
  */
 export const getFs = (): XFS => xfs

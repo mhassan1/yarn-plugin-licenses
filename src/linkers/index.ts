@@ -7,7 +7,6 @@ import { PortablePath, FakeFS } from '@yarnpkg/fslib'
 /* istanbul ignore next */
 /**
  * Resolve linker from `nodeLinker` configuration
- *
  * @param {string} nodeLinker - `nodeLinker` configuration
  * @returns {Linker} linker
  */
