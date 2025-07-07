@@ -95,6 +95,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"has-flag@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "has-flag@npm:5.0.1"
+  checksum: 6c214902e9d829979ef0f906980599df1db5ca289a9c72cc1b1ebc2c8c924681c60b632a21bfc23728a1098a3f300029a8608f293fcc559962ecd495652aa250
+  languageName: node
+  linkType: hard
+
 "has-symbols@npm:^1.0.3":
   version: 1.0.3
   resolution: "has-symbols@npm:1.0.3"
@@ -191,11 +198,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":
+  version: 0.0.0-use.local
+  resolution: "package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"
+  dependencies:
+    package2-portal2: "portal:../package2-portal2"
+  languageName: node
+  linkType: soft
+
+"package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2":
+  version: 0.0.0-use.local
+  resolution: "package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2"
+  dependencies:
+    has-flag: "npm:^5.0.1"
+  languageName: node
+  linkType: soft
+
 "package2@npm:0.0.0, package2@workspace:packages/package2":
   version: 0.0.0-use.local
   resolution: "package2@workspace:packages/package2"
   dependencies:
     has-tostringtag: "npm:^1.0.0"
+    package2-portal1: "portal:package2-portal1"
   languageName: unknown
   linkType: soft
 

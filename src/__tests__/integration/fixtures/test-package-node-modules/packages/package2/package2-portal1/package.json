@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "package2-portal2": "portal:../package2-portal2"
+  }
+}

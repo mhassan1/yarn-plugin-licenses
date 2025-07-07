@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.15.1] - 2025-07-07
+[0.15.1]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.15.0...v0.15.1
+
+- Fix `portal:` and `link:` protocols in `pnpm` linker
+
 ## [0.15.0] - 2024-07-24
 [0.15.0]: https://github.com/mhassan1/yarn-plugin-licenses/compare/v0.14.0...v0.15.0
 
