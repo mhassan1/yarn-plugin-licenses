@@ -2,13 +2,13 @@
 
 exports[`licenses audit (node-modules) should audit as json with allowed licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses audit (node-modules) should audit as json with blocked licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
@@ -71,6 +71,7 @@ exports[`licenses audit (node-modules) should audit non-recursively with allowed
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -84,19 +85,22 @@ exports[`licenses audit (node-modules) should audit non-recursively with blocked
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit non-recursively with focus on a leaf workspace with allowed licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit non-recursively with focus on a leaf workspace with blocked licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
 "
 `;
 
@@ -173,6 +177,8 @@ exports[`licenses audit (node-modules) should audit recursively with allowed lic
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   ├─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -186,45 +192,55 @@ exports[`licenses audit (node-modules) should audit recursively with blocked lic
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   ├─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit recursively with focus on a leaf workspace with allowed licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit recursively with focus on a leaf workspace with blocked licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit recursively with focus with allowed licenses 1`] = `
 "└─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit recursively with focus with blocked licenses 1`] = `
 "└─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (node-modules) should audit without metadata as json with allowed licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses audit (node-modules) should audit without metadata as json with blocked licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
@@ -235,6 +251,7 @@ exports[`licenses audit (node-modules) should audit without metadata with allowe
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -246,19 +263,20 @@ exports[`licenses audit (node-modules) should audit without metadata with blocke
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (pnp) should audit as json with allowed licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses audit (pnp) should audit as json with blocked licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
@@ -321,6 +339,7 @@ exports[`licenses audit (pnp) should audit non-recursively with allowed licenses
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -334,19 +353,22 @@ exports[`licenses audit (pnp) should audit non-recursively with blocked licenses
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (pnp) should audit non-recursively with focus on a leaf workspace with allowed licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnp) should audit non-recursively with focus on a leaf workspace with blocked licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
 "
 `;
 
@@ -423,6 +445,8 @@ exports[`licenses audit (pnp) should audit recursively with allowed licenses 1`]
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   ├─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -436,45 +460,55 @@ exports[`licenses audit (pnp) should audit recursively with blocked licenses 1`]
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   ├─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (pnp) should audit recursively with focus on a leaf workspace with allowed licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnp) should audit recursively with focus on a leaf workspace with blocked licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnp) should audit recursively with focus with allowed licenses 1`] = `
 "└─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnp) should audit recursively with focus with blocked licenses 1`] = `
 "└─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnp) should audit without metadata as json with allowed licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses audit (pnp) should audit without metadata as json with blocked licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
@@ -485,6 +519,7 @@ exports[`licenses audit (pnp) should audit without metadata with allowed license
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -496,19 +531,20 @@ exports[`licenses audit (pnp) should audit without metadata with blocked license
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit as json with allowed licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses audit (pnpm) should audit as json with blocked licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{"url":"https://github.com/mikeal/caseless","vendorName":"Mikeal Rogers"}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
@@ -571,6 +607,7 @@ exports[`licenses audit (pnpm) should audit non-recursively with allowed license
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -584,19 +621,22 @@ exports[`licenses audit (pnpm) should audit non-recursively with blocked license
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit non-recursively with focus on a leaf workspace with allowed licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit non-recursively with focus on a leaf workspace with blocked licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   └─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
 "
 `;
 
@@ -673,6 +713,8 @@ exports[`licenses audit (pnpm) should audit recursively with allowed licenses 1`
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   ├─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -686,45 +728,55 @@ exports[`licenses audit (pnpm) should audit recursively with blocked licenses 1`
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   ├─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit recursively with focus on a leaf workspace with allowed licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit recursively with focus on a leaf workspace with blocked licenses 1`] = `
 "└─ UNKNOWN
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit recursively with focus with allowed licenses 1`] = `
 "└─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit recursively with focus with blocked licenses 1`] = `
 "└─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
-   └─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
+   └─ package2-portal2@portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2 (via portal:../package2-portal2::locator=package2-portal1%40portal%3Apackage2-portal1%3A%3Alocator%3Dpackage2%2540workspace%253Apackages%252Fpackage2)
 "
 `;
 
 exports[`licenses audit (pnpm) should audit without metadata as json with allowed licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
 exports[`licenses audit (pnpm) should audit without metadata as json with blocked licenses 1`] = `
 "{"value":"Apache-2.0","children":{"caseless@npm:0.12.0":{"value":{"locator":"caseless@npm:0.12.0","descriptor":"caseless@npm:^0.12.0"},"children":{}}}}
-{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
+{"value":"UNKNOWN","children":{"package1@workspace:packages/package1":{"value":{"locator":"package1@workspace:packages/package1","descriptor":"package1@workspace:packages/package1"},"children":{}},"package2@workspace:packages/package2":{"value":{"locator":"package2@workspace:packages/package2","descriptor":"package2@workspace:packages/package2"},"children":{}},"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2":{"value":{"locator":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2","descriptor":"package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2"},"children":{}},"test-package@workspace:.":{"value":{"locator":"test-package@workspace:.","descriptor":"test-package@workspace:."},"children":{}}}}
 "
 `;
 
@@ -735,6 +787,7 @@ exports[`licenses audit (pnpm) should audit without metadata with allowed licens
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;
@@ -746,6 +799,7 @@ exports[`licenses audit (pnpm) should audit without metadata with blocked licens
 └─ UNKNOWN
    ├─ package1@workspace:packages/package1 (via workspace:packages/package1)
    ├─ package2@workspace:packages/package2 (via workspace:packages/package2)
+   ├─ package2-portal1@portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2 (via portal:package2-portal1::locator=package2%40workspace%3Apackages%2Fpackage2)
    └─ test-package@workspace:. (via workspace:.)
 "
 `;

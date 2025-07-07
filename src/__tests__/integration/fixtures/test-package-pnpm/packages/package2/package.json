@@ -2,6 +2,7 @@
   "name": "package2",
   "version": "0.0.0",
   "devDependencies": {
-    "has-tostringtag": "^1.0.0"
+    "has-tostringtag": "^1.0.0",
+    "package2-portal1": "portal:package2-portal1"
   }
 }

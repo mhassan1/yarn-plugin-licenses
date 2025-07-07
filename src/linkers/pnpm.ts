@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 // this file is covered by CLI tests
 
-import { Project, Package, structUtils } from '@yarnpkg/core'
+import { Project, Package, structUtils, Locator, LinkType } from '@yarnpkg/core'
 import { xfs, ppath, PortablePath, Filename, XFS } from '@yarnpkg/fslib'
 import { getArchitectureSet } from './utils'
 
@@ -21,6 +21,9 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
   const workspace = project.tryWorkspaceByLocator(locator)
   if (workspace) return workspace.cwd
 
+  const localPath = pkg.linkType === LinkType.SOFT ? _getLocalPath(project, locator) : null
+  if (localPath) return localPath
+
   return ppath.join(
     project.configuration.projectCwd as PortablePath,
     Filename.nodeModules,
@@ -36,3 +39,20 @@ export const getPackagePath = async (project: Project, pkg: Package): Promise<Po
  * @returns {XFS} Virtual file system
  */
 export const getFs = (): XFS => xfs
+
+/**
+ * Find a local package's path by recursively following parent links until a workspace is found
+ * @param {Project} project - Yarn project
+ * @param {Locator} locator - Yarn package locator
+ * @returns {PortablePath | null} Package path
+ */
+const _getLocalPath = (project: Project, locator: Locator): PortablePath | null => {
+  const parsedRange = structUtils.tryParseRange(locator.reference)
+  if (!parsedRange?.params?.locator) return null
+  const parentLocator = structUtils.parseLocator(parsedRange.params.locator)
+  const parentWorkspace = project.tryWorkspaceByLocator(parentLocator)
+  if (parentWorkspace) {
+    return ppath.join(parentWorkspace.cwd, parsedRange.selector as PortablePath)
+  }
+  return _getLocalPath(project, parentLocator)
+}
