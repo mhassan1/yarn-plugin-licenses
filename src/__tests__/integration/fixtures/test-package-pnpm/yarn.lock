@@ -19,14 +19,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.6.0":
-  version: 1.10.0
-  resolution: "axios@npm:1.10.0"
+"axios@npm:^1.11.0":
+  version: 1.11.0
+  resolution: "axios@npm:1.11.0"
   dependencies:
     follow-redirects: "npm:^1.15.6"
-    form-data: "npm:^4.0.0"
+    form-data: "npm:^4.0.4"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 2239cb269cc789eac22f5d1aabd58e1a83f8f364c92c2caa97b6f5cbb4ab2903d2e557d9dc670b5813e9bcdebfb149e783fb8ab3e45098635cd2f559b06bd5d8
+  checksum: 5de273d33d43058610e4d252f0963cc4f10714da0bfe872e8ef2cbc23c2c999acc300fd357b6bce0fc84a2ca9bd45740fa6bb28199ce2c1266c8b1a393f2b36e
   languageName: node
   linkType: hard
 
@@ -133,7 +133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"form-data@npm:^4.0.0":
+"form-data@npm:^4.0.4":
   version: 4.0.4
   resolution: "form-data@npm:4.0.4"
   dependencies:
@@ -313,7 +313,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "package1@workspace:packages/package1"
   dependencies:
-    axios: "npm:^1.6.0"
+    axios: "npm:^1.11.0"
     is-ci: "npm:^2.0.0"
     is-function: "npm:^1.0.2"
     is-promise: "npm:^3.0.0"
@@ -358,7 +358,7 @@ __metadata:
   resolution: "test-package@workspace:."
   dependencies:
     "@esbuild/android-arm": "npm:^0.17.10"
-    axios: "npm:^1.6.0"
+    axios: "npm:^1.11.0"
     caseless: "npm:^0.12.0"
     has: "npm:^1.0.3"
     is-ci: "npm:^1.0.0"
