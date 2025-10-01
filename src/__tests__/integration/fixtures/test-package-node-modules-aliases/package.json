@@ -5,6 +5,7 @@
   },
   "resolutions": {
     "@storybook/core-common/webpack": "^5.94.0",
+    "global": "npm:-@0.0.1",
     "micromatch": "^4.0.8",
     "semver": "^7.5.3",
     "trim": "^0.0.3"
