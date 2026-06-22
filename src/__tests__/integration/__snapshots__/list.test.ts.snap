@@ -148,7 +148,7 @@ exports[`getTree should list licenses recursively 1`] = `
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -192,7 +192,7 @@ exports[`getTree should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -220,7 +220,7 @@ exports[`getTree should list licenses recursively 1`] = `
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -291,7 +291,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -323,7 +323,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -340,7 +340,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -554,7 +554,7 @@ exports[`licenses list (node-modules) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -598,7 +598,7 @@ exports[`licenses list (node-modules) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -626,7 +626,7 @@ exports[`licenses list (node-modules) should list licenses recursively 1`] = `
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -697,7 +697,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -729,7 +729,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -746,7 +746,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -815,7 +815,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -847,7 +847,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -864,7 +864,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -932,7 +932,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -968,7 +968,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -989,7 +989,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -1250,7 +1250,7 @@ exports[`licenses list (pnp) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -1294,7 +1294,7 @@ exports[`licenses list (pnp) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -1322,7 +1322,7 @@ exports[`licenses list (pnp) should list licenses recursively 1`] = `
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -1393,7 +1393,7 @@ exports[`licenses list (pnp) should list licenses recursively for production 1`]
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -1425,7 +1425,7 @@ exports[`licenses list (pnp) should list licenses recursively for production 1`]
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -1442,7 +1442,7 @@ exports[`licenses list (pnp) should list licenses recursively for production 1`]
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -1511,7 +1511,7 @@ exports[`licenses list (pnp) should list licenses recursively for production wit
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -1543,7 +1543,7 @@ exports[`licenses list (pnp) should list licenses recursively for production wit
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -1560,7 +1560,7 @@ exports[`licenses list (pnp) should list licenses recursively for production wit
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -1628,7 +1628,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus 1`] = `
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -1664,7 +1664,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus 1`] = `
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -1685,7 +1685,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus 1`] = `
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -1946,7 +1946,7 @@ exports[`licenses list (pnpm) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -1990,7 +1990,7 @@ exports[`licenses list (pnpm) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -2018,7 +2018,7 @@ exports[`licenses list (pnpm) should list licenses recursively 1`] = `
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -2089,7 +2089,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production 1`
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -2121,7 +2121,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production 1`
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -2138,7 +2138,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production 1`
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -2207,7 +2207,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production wi
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -2239,7 +2239,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production wi
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -2256,7 +2256,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production wi
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
@@ -2324,7 +2324,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus 1`] = 
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
-│  ├─ form-data@npm:4.0.5 (via npm:^4.0.5)
+│  ├─ form-data@npm:4.0.6 (via npm:^4.0.5)
 │  │  ├─ URL: git://github.com/form-data/form-data.git
 │  │  ├─ VendorName: Felix Geisendörfer
 │  │  └─ VendorUrl: http://debuggable.com/
@@ -2360,7 +2360,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus 1`] = 
 │  │  ├─ URL: git+https://github.com/inspect-js/has-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/has-tostringtag#readme
-│  ├─ hasown@npm:2.0.2 (via npm:^2.0.2)
+│  ├─ hasown@npm:2.0.4 (via npm:^2.0.4)
 │  │  ├─ URL: git+https://github.com/inspect-js/hasOwn.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/inspect-js/hasOwn#readme
@@ -2381,7 +2381,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus 1`] = 
 │  │  └─ VendorUrl: https://github.com/es-shims/math-intrinsics#readme
 │  ├─ mime-db@npm:1.52.0 (via npm:1.52.0)
 │  │  └─ URL: git+https://github.com/jshttp/mime-db.git
-│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.12)
+│  ├─ mime-types@npm:2.1.35 (via npm:^2.1.35)
 │  │  └─ URL: git+https://github.com/jshttp/mime-types.git
 │  └─ proxy-from-env@npm:2.1.0 (via npm:^2.1.0)
 │     ├─ URL: git+https://github.com/Rob--W/proxy-from-env.git
