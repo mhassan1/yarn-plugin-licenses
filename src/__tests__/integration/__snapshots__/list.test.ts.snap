@@ -152,7 +152,7 @@ exports[`getTree should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -309,7 +309,7 @@ exports[`getTree should list licenses recursively for production 1`] = `
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -586,7 +586,7 @@ exports[`licenses list (node-modules) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -743,7 +743,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -875,7 +875,7 @@ exports[`licenses list (node-modules) should list licenses recursively for produ
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1006,7 +1006,7 @@ exports[`licenses list (node-modules) should list licenses recursively with focu
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1338,7 +1338,7 @@ exports[`licenses list (pnp) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1495,7 +1495,7 @@ exports[`licenses list (pnp) should list licenses recursively for production 1`]
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1627,7 +1627,7 @@ exports[`licenses list (pnp) should list licenses recursively for production wit
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -1758,7 +1758,7 @@ exports[`licenses list (pnp) should list licenses recursively with focus 1`] = `
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -2090,7 +2090,7 @@ exports[`licenses list (pnpm) should list licenses recursively 1`] = `
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -2247,7 +2247,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production 1`
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -2379,7 +2379,7 @@ exports[`licenses list (pnpm) should list licenses recursively for production wi
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
@@ -2510,7 +2510,7 @@ exports[`licenses list (pnpm) should list licenses recursively with focus 1`] = 
 │  │  ├─ URL: git+https://github.com/es-shims/es-set-tostringtag.git
 │  │  ├─ VendorName: Jordan Harband
 │  │  └─ VendorUrl: https://github.com/es-shims/es-set-tostringtag#readme
-│  ├─ follow-redirects@npm:1.16.0 [0de8e] (via npm:^1.16.0 [0de8e])
+│  ├─ follow-redirects@npm:1.16.1 [0de8e] (via npm:^1.16.0 [0de8e])
 │  │  ├─ URL: git+ssh://git@github.com/follow-redirects/follow-redirects.git
 │  │  ├─ VendorName: Ruben Verborgh
 │  │  └─ VendorUrl: https://github.com/follow-redirects/follow-redirects
